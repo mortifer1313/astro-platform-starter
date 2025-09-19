@@ -8,19 +8,19 @@ interface Props {
 const { width = 200, height = 60, class: className = '' } = Astro.props;
 ---
 
-<div class={`inline-flex items-center gap-3 ${className}`}>
-  <!-- Motorcycle Icon -->
-  <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 20c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm24 0c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM28 12h-4l-2-4h-6v2h5l1.5 3H20l-2-6h-4l2 6h-4l-2-8H6v2h3l2 8-2 2h18l2-2v-3zm-16 0h6l1 3h-8l1-3z" fill="currentColor"/>
-  </svg>
+<div class={`inline-flex items-center gap-4 ${className}`}>
+  <!-- Mac's MCC Logo/Patch -->
+  <div class="relative">
+    <img src="/images/1%ER  (1).png" alt="Mac's MCC" class="w-16 h-16 object-contain" />
+  </div>
   
   <!-- Club Name -->
   <div class="flex flex-col">
-    <span class="text-2xl font-bold text-primary" style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.1em;">
-      Mac's MC
+    <span class="text-3xl font-bold text-accent drop-shadow-lg" style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.15em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+      Mac's MCC
     </span>
-    <span class="text-sm text-secondary font-medium tracking-wide" style="font-family: var(--font-sans);">
-      Year-End Event Guide
+    <span class="text-base text-primary-content font-semibold tracking-wider" style="font-family: var(--font-sans); text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+      Accommodation Guide
     </span>
   </div>
 </div>

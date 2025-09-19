@@ -5,13 +5,46 @@ import { siteConfig } from '../config/site.ts';
 
 <Layout title={siteConfig.title}>
     <!-- Event Info Section -->
-    <section class="hero-section -mx-6 sm:-mx-12 px-6 sm:px-12 py-16 mb-12">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="mb-6 text-primary-content">{siteConfig.event.name}</h1>
-            <div class="bg-black/30 rounded-lg p-6 border-2 border-accent">
-                <p class="text-lg mb-2"><strong>📍 Venue:</strong> {siteConfig.event.venue.name}</p>
-                <p class="text-lg mb-2"><strong>📍 Address:</strong> {siteConfig.event.venue.address}</p>
-                <p class="text-lg"><strong>📅 Date:</strong> {siteConfig.event.dates}</p>
+    <section class="hero-section -mx-6 sm:-mx-12 px-6 sm:px-12 py-20 mb-12 relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <img src="/images/1%ER LONG.png" alt="Mac's MCC Background" class="w-full h-full object-cover" />
+        </div>
+        
+        <!-- Hero content -->
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <!-- Mac's MCC Patch Display -->
+            <div class="flex justify-center items-center mb-8">
+                <div class="relative">
+                    <img src="/images/1%ER  (1).png" alt="Mac's MCC Patch" class="w-32 h-32 object-contain drop-shadow-2xl" />
+                </div>
+            </div>
+            
+            <h1 class="mb-8 text-primary-content text-6xl sm:text-7xl font-black tracking-wider drop-shadow-lg" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.9);">
+                {siteConfig.event.name}
+            </h1>
+            
+            <!-- Event details with dark styling -->
+            <div class="bg-black/70 rounded-xl p-8 border-4 border-accent backdrop-blur-sm">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="border-r border-accent/30 last:border-r-0">
+                        <div class="text-accent font-bold text-lg mb-2">📍 VENUE</div>
+                        <div class="text-primary-content font-semibold">{siteConfig.event.venue.name}</div>
+                    </div>
+                    <div class="border-r border-accent/30 last:border-r-0">
+                        <div class="text-accent font-bold text-lg mb-2">📍 ADDRESS</div>
+                        <div class="text-primary-content font-semibold">{siteConfig.event.venue.address}</div>
+                    </div>
+                    <div>
+                        <div class="text-accent font-bold text-lg mb-2">📅 DATE</div>
+                        <div class="text-primary-content font-semibold">{siteConfig.event.dates}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brotherhood message -->
+            <div class="mt-8 text-accent font-bold text-xl tracking-widest" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                RIDE TOGETHER • STAY TOGETHER
             </div>
         </div>
     </section>

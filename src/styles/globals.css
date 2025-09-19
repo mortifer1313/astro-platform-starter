@@ -5,26 +5,26 @@
     --font-sans: 'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-display: 'Oswald', sans-serif;
     
-    /* Mac's Motorcycle Club Color Palette */
-    --color-primary: #1a1a1a;        /* Deep Black - Bold, powerful */
+    /* Mac's MCC Color Palette - Darker Theme */
+    --color-primary: #0a0a0a;        /* Deep Black - Bold, powerful */
     --color-primary-content: #ffffff;
-    --color-secondary: #c41e3a;      /* Deep Red - Mac's accent color */
+    --color-secondary: #8b0000;      /* Dark Red - Deep crimson */
     --color-secondary-content: #ffffff;
     --color-accent: #ffd700;         /* Gold - Chrome/metal accent */
-    --color-accent-content: #1a1a1a;
-    --color-complementary: #f5f5f5;  /* Light gray background */
-    --color-neutral: #333333;        /* Dark gray for text */
+    --color-accent-content: #000000;
+    --color-complementary: #1a1a1a;  /* Dark background */
+    --color-neutral: #e5e5e5;        /* Light text on dark background */
     --color-neutral-content: #ffffff;
     --color-chrome: #c0c0c0;         /* Chrome/Silver for accents */
     
     /* Background variations */
-    --color-surface: #ffffff;
-    --color-surface-secondary: #f8f8f8;
-    --color-dark: #0f0f0f;           /* Darker black for headers */
+    --color-surface: #2a2a2a;        /* Dark surface */
+    --color-surface-secondary: #333333; /* Darker surface */
+    --color-dark: #000000;           /* Pure black for headers */
     --background-image-noise: linear-gradient(
             45deg,
-            color-mix(in oklab, var(--color-gray-900) 5%, transparent),
-            color-mix(in oklab, var(--color-gray-800) 10%, transparent)
+            color-mix(in oklab, var(--color-gray-900) 20%, transparent),
+            color-mix(in oklab, var(--color-gray-950) 50%, transparent)
         ),
         url('/images/noise.png');
 }
@@ -159,16 +159,20 @@
     }
     
     .card {
-        @apply bg-surface rounded-lg shadow-lg p-6 border-l-4 border-secondary;
+        @apply bg-surface rounded-lg shadow-2xl p-6 border-l-4 border-secondary;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
     
     .card-dark {
-        @apply bg-primary text-primary-content rounded-lg shadow-lg p-6 border-l-4 border-accent;
+        @apply bg-primary text-primary-content rounded-lg shadow-2xl p-6 border-l-4 border-accent;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
     }
     
     .hero-section {
-        @apply bg-gradient-to-r from-primary via-neutral to-primary text-primary-content;
+        @apply bg-gradient-to-br from-primary via-dark to-secondary text-primary-content;
         background-image: var(--background-image-noise);
+        position: relative;
+        border-bottom: 4px solid var(--color-accent);
     }
     
     .section-header {

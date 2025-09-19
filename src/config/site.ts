@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "Mac's MC",
-  title: "MAC'S MC - Accommodation Guide",
-  description: "MAC'S MC End-Year Event Accommodation Guide - Padstal, The Grove Mall, Equestria, Pretoria",
+  name: "Mac's MCC",
+  title: "MAC'S MCC - Accommodation Guide",
+  description: "MAC'S MCC End-Year Event Accommodation Guide - Padstal, The Grove Mall, Equestria, Pretoria",
   url: "https://macsmccaccomodation.netlify.app",
   
   // Event Information
