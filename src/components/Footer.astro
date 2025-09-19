@@ -1,9 +1,76 @@
 ---
-
+import { siteConfig } from '../config/site.ts';
 ---
 
-<footer class="pt-16 pb-12 sm:pt-24 sm:pb-16">
-    <p class="text-sm">
-        <a href="https://docs.netlify.com/frameworks/astro/" class="decoration-dashed text-primary underline-offset-8"> Astro on Netlify </a>
-    </p>
+<footer class="bg-primary text-primary-content px-6 sm:px-12">
+    <div class="max-w-6xl mx-auto py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Event Info -->
+            <div>
+                <h3 class="text-accent font-bold mb-4 text-lg" style="font-family: var(--font-display); text-transform: uppercase;">
+                    {siteConfig.event.name}
+                </h3>
+                <p class="text-sm mb-2">
+                    <strong>Dates:</strong> {siteConfig.event.dates}
+                </p>
+                <p class="text-sm mb-2">
+                    <strong>Venue:</strong> {siteConfig.event.venue.name}
+                </p>
+                <p class="text-sm">
+                    {siteConfig.event.venue.address}
+                </p>
+            </div>
+            
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-accent font-bold mb-4 text-lg" style="font-family: var(--font-display); text-transform: uppercase;">
+                    Contact
+                </h3>
+                <p class="text-sm mb-2">
+                    <strong>Event Coordinator:</strong><br/>
+                    {siteConfig.contact.eventCoordinator}
+                </p>
+                <p class="text-sm mb-2">
+                    <strong>Phone:</strong> {siteConfig.contact.coordinatorPhone}
+                </p>
+                <p class="text-sm">
+                    <strong>Email:</strong> <a href={`mailto:${siteConfig.contact.email}`} class="text-accent hover:text-secondary transition-colors">{siteConfig.contact.email}</a>
+                </p>
+            </div>
+            
+            <!-- Social & Safety -->
+            <div>
+                <h3 class="text-accent font-bold mb-4 text-lg" style="font-family: var(--font-display); text-transform: uppercase;">
+                    Stay Connected
+                </h3>
+                <div class="flex gap-4 mb-4">
+                    <a href={siteConfig.social.facebook} class="text-primary-content hover:text-accent transition-colors" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href={siteConfig.social.instagram} class="text-primary-content hover:text-accent transition-colors" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-2.509 0-4.54-2.031-4.54-4.54s2.031-4.54 4.54-4.54 4.54 2.031 4.54 4.54-2.031 4.54-4.54 4.54zm7.424 0c-2.509 0-4.54-2.031-4.54-4.54s2.031-4.54 4.54-4.54 4.54 2.031 4.54 4.54-2.031 4.54-4.54 4.54z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-accent font-semibold mb-2" style="font-family: var(--font-display); text-transform: uppercase;">
+                    Ride Safe, Arrive Alive
+                </p>
+                <p class="text-xs text-gray-300">
+                    Brotherhood, Brotherhood, Safety First
+                </p>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-600 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-300">
+            <p>
+                © 2025 {siteConfig.name}. All rights reserved.
+            </p>
+            <p>
+                Powered by <a href="https://docs.netlify.com/frameworks/astro/" class="text-accent hover:text-secondary transition-colors">Astro & Netlify</a>
+            </p>
+        </div>
+    </div>
 </footer>

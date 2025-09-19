@@ -1,29 +1,129 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ContextAlert from '../components/ContextAlert.astro';
-import Markdown from '../components/Markdown.astro';
-import InteractiveCounter from '../components/InteractiveCounter.tsx';
+import { siteConfig } from '../config/site.ts';
 
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
+const eventIntro = `
+Welcome Brothers and Sisters to the **${siteConfig.event.name}**!
 
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
+This year's celebration runs **${siteConfig.event.dates}** at the legendary **${siteConfig.event.venue.name}**. Whether you're riding solo or with your crew, this guide has everything you need for an unforgettable weekend.
+
+Find **rider-friendly accommodation**, discover the best **local restaurants and bars**, get all the **event details**, and connect with brothers and sisters from across the region.
+
+*${siteConfig.event.theme}* - Let's make this year's celebration one for the history books!
 `;
 ---
 
-<Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
+<Layout title={siteConfig.title}>
+    <!-- Hero Section -->
+    <section class="hero-section -mx-6 sm:-mx-12 px-6 sm:px-12 py-20 mb-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mc-badge inline-block mb-6">Mac's Motorcycle Club</div>
+            <h1 class="mb-6 text-primary-content">
+                Year-End Event Guide 2025
+            </h1>
+            <p class="text-xl text-primary-content/90 mb-8 leading-relaxed">
+                {siteConfig.event.theme}
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/event" class="btn btn-secondary btn-xl">
+                    📅 Event Details
+                </a>
+                <a href="/accommodation" class="btn btn-outline btn-xl">
+                    🏨 Find Lodging
+                </a>
+            </div>
+        </div>
+    </section>
     
-    <div class="mb-10">
-        <h2 class="text-xl font-semibold mb-4">Interactive Component Demo</h2>
-        <p class="mb-4 text-gray-600">This counter demonstrates an Astro island with React interactivity:</p>
-        <InteractiveCounter client:load />
-    </div>
+    <!-- Quick Info Cards -->
+    <section class="mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card text-center">
+                <h3 class="mb-4 text-secondary">📅 Event Dates</h3>
+                <p class="text-2xl font-bold mb-2">{siteConfig.event.dates}</p>
+                <p class="text-sm text-neutral/70">4 Days of Brotherhood & Celebration</p>
+            </div>
+            
+            <div class="card text-center">
+                <h3 class="mb-4 text-secondary">📍 Venue</h3>
+                <p class="text-lg font-bold mb-2">{siteConfig.event.venue.name}</p>
+                <p class="text-sm text-neutral/70">{siteConfig.event.venue.address}</p>
+            </div>
+            
+            <div class="card text-center">
+                <h3 class="mb-4 text-secondary">👥 Coordinator</h3>
+                <p class="text-lg font-bold mb-2">{siteConfig.contact.eventCoordinator}</p>
+                <p class="text-sm text-neutral/70">{siteConfig.contact.coordinatorPhone}</p>
+            </div>
+        </div>
+    </section>
     
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+    <!-- Main Content -->
+    <section class="mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+                <h2 class="section-header mb-8">Welcome Riders!</h2>
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-lg leading-relaxed mb-6">
+                        Welcome Brothers and Sisters to the <strong class="text-secondary">{siteConfig.event.name}</strong>!
+                    </p>
+                    <p class="mb-6">
+                        This year's celebration runs <strong>{siteConfig.event.dates}</strong> at the legendary <strong>{siteConfig.event.venue.name}</strong>. Whether you're riding solo or with your crew, this guide has everything you need for an unforgettable weekend.
+                    </p>
+                    <p class="mb-6">
+                        Find <strong class="text-secondary">rider-friendly accommodation</strong>, discover the best <strong class="text-secondary">local restaurants and bars</strong>, get all the <strong class="text-secondary">event details</strong>, and connect with brothers and sisters from across the region.
+                    </p>
+                    <p class="text-accent font-semibold text-lg">
+                        <em>{siteConfig.event.theme}</em> - Let's make this year's celebration one for the history books!
+                    </p>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="section-header mb-8">Quick Access</h2>
+                <div class="space-y-4">
+                    <a href="/accommodation" class="card-dark block hover:scale-105 transition-transform">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">🏨</span>
+                            <div>
+                                <h3 class="text-lg font-bold">Accommodation</h3>
+                                <p class="text-sm opacity-80">Bike-friendly hotels & motels</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/dining" class="card-dark block hover:scale-105 transition-transform">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">🍻</span>
+                            <div>
+                                <h3 class="text-lg font-bold">Food & Drink</h3>
+                                <p class="text-sm opacity-80">Local restaurants & biker bars</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="/area" class="card-dark block hover:scale-105 transition-transform">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl">🗺️</span>
+                            <div>
+                                <h3 class="text-lg font-bold">Local Area</h3>
+                                <p class="text-sm opacity-80">Attractions & things to do</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="text-center bg-secondary/10 -mx-6 sm:-mx-12 px-6 sm:px-12 py-16">
+        <h2 class="mb-4">Ready to Roll?</h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">
+            Got questions? Need help with registration? Our event coordinator is here to help make your experience unforgettable.
+        </p>
+        <a href="/contact" class="btn btn-secondary btn-xl">
+            Contact Event Coordinator
+        </a>
+    </section>
 </Layout>
