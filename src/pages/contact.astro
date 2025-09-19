@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config/site.ts';
+
+const pageTitle = "Contact & Registration - Mac's MCC Event Guide";
+---
+
+<Layout title={pageTitle} class="page-bg-accommodation">
+  <!-- Hero Section -->
+  <section class="hero-section -mx-6 sm:-mx-12 px-6 sm:px-12 py-16 mb-12">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="mb-4 text-primary-content">
+        📞 Contact & Registration
+      </h1>
+      <p class="text-lg text-primary-content/90 mb-6">
+        Get in touch for {siteConfig.event.name} registration and information
+      </p>
+      <div class="mc-badge inline-block">
+        Mac's MCC Event Registration
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Details -->
+  <section class="mb-12">
+    <h2 class="section-header mb-8">📅 Event Information</h2>
+    <div class="card text-center">
+      <h3 class="text-2xl font-bold text-accent mb-4">{siteConfig.event.name}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <div class="text-secondary font-bold mb-2">📍 VENUE</div>
+          <div class="text-primary-content font-semibold">{siteConfig.event.venue.name}</div>
+          <div class="text-sm text-neutral">{siteConfig.event.venue.address}</div>
+        </div>
+        <div>
+          <div class="text-secondary font-bold mb-2">📅 DATES</div>
+          <div class="text-primary-content font-semibold">{siteConfig.event.dates}</div>
+        </div>
+        <div>
+          <div class="text-secondary font-bold mb-2">🎭 THEME</div>
+          <div class="text-primary-content font-semibold">{siteConfig.event.theme}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Coordinator -->
+  <section class="mb-12">
+    <h2 class="section-header mb-8">👤 Event Coordinator</h2>
+    <div class="card">
+      <h3 class="text-xl font-bold text-accent mb-4">🏍️ {siteConfig.contact.eventCoordinator}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">📱</span>
+            <div>
+              <div class="text-secondary font-semibold">Direct Phone</div>
+              <a href="tel:{siteConfig.contact.coordinatorPhone}" class="text-accent hover:text-accent/80 font-bold">
+                {siteConfig.contact.coordinatorPhone}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">📧</span>
+            <div>
+              <div class="text-secondary font-semibold">Email</div>
+              <a href="mailto:{siteConfig.contact.email}" class="text-accent hover:text-accent/80 font-bold">
+                {siteConfig.contact.email}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Process -->
+  <section class="mb-12">
+    <h2 class="section-header mb-8">📝 Registration Process</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card text-center">
+        <div class="text-3xl mb-3">1️⃣</div>
+        <h4 class="text-secondary font-bold mb-2">Contact Coordinator</h4>
+        <p class="text-sm">Call or email our event coordinator to express interest</p>
+      </div>
+      <div class="card text-center">
+        <div class="text-3xl mb-3">2️⃣</div>
+        <h4 class="text-secondary font-bold mb-2">Provide Details</h4>
+        <p class="text-sm">Share your contact info, bike details, and accommodation needs</p>
+      </div>
+      <div class="card text-center">
+        <div class="text-3xl mb-3">3️⃣</div>
+        <h4 class="text-secondary font-bold mb-2">Receive Information</h4>
+        <p class="text-sm">Get complete event package and accommodation recommendations</p>
+      </div>
+      <div class="card text-center">
+        <div class="text-3xl mb-3">4️⃣</div>
+        <h4 class="text-secondary font-bold mb-2">Confirm Attendance</h4>
+        <p class="text-sm">Finalize registration and receive event details</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Methods -->
+  <section class="mb-12">
+    <h2 class="section-header mb-8">📞 Contact Methods</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Phone -->
+      <div class="card text-center">
+        <div class="text-4xl mb-4">📱</div>
+        <h3 class="text-secondary font-bold mb-3">Phone</h3>
+        <a href="tel:{siteConfig.contact.phone}" class="btn btn-secondary mb-2">
+          {siteConfig.contact.phone}
+        </a>
+        <p class="text-sm text-neutral">Main club line</p>
+      </div>
+      
+      <!-- Email -->
+      <div class="card text-center">
+        <div class="text-4xl mb-4">📧</div>
+        <h3 class="text-secondary font-bold mb-3">Email</h3>
+        <a href="mailto:{siteConfig.contact.email}" class="btn btn-secondary mb-2">
+          Send Email
+        </a>
+        <p class="text-sm text-neutral">events@macsmc.org</p>
+      </div>
+      
+      <!-- Social Media -->
+      <div class="card text-center">
+        <div class="text-4xl mb-4">📱</div>
+        <h3 class="text-secondary font-bold mb-3">Social Media</h3>
+        <div class="flex flex-col gap-2">
+          <a href={siteConfig.social.facebook} target="_blank" class="btn btn-outline text-sm">
+            📘 Facebook
+          </a>
+          <a href={siteConfig.social.instagram} target="_blank" class="btn btn-outline text-sm">
+            📷 Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Important Notes -->
+  <section class="bg-secondary/10 -mx-6 sm:-mx-12 px-6 sm:px-12 py-12 mb-12">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-header mb-8 text-center">⚠️ Important Registration Notes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="card-dark">
+          <h4 class="text-accent font-bold mb-3">🏍️ Bike Requirements</h4>
+          <ul class="text-sm space-y-1">
+            <li>• Valid motorcycle license required</li>
+            <li>• Bike must be roadworthy and insured</li>
+            <li>• Safety gear mandatory</li>
+          </ul>
+        </div>
+        <div class="card-dark">
+          <h4 class="text-accent font-bold mb-3">📅 Registration Deadline</h4>
+          <p class="text-sm">Register at least 2 weeks before the event for accommodation planning</p>
+        </div>
+        <div class="card-dark">
+          <h4 class="text-accent font-bold mb-3">💰 Event Costs</h4>
+          <p class="text-sm">Event fees and accommodation costs are separate. Details provided upon registration</p>
+        </div>
+        <div class="card-dark">
+          <h4 class="text-accent font-bold mb-3">👥 Group Bookings</h4>
+          <p class="text-sm">Special rates available for groups of 6+ riders staying together</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="text-center bg-accent/20 -mx-6 sm:-mx-12 px-6 sm:px-12 py-16">
+    <h2 class="mb-4">🏍️ Ready to Join the Ride?</h2>
+    <p class="text-lg mb-8">Contact our event coordinator today to secure your spot!</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:{siteConfig.contact.coordinatorPhone}" class="btn btn-secondary btn-xl">
+        📱 Call Now: {siteConfig.contact.coordinatorPhone}
+      </a>
+      <a href="mailto:{siteConfig.contact.email}" class="btn btn-outline btn-xl">
+        📧 Send Email
+      </a>
+    </div>
+  </section>
+</Layout>
