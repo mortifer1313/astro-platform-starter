@@ -8,24 +8,23 @@ interface Props {
 const { width = 200, height = 60, class: className = '' } = Astro.props;
 ---
 
-<div class={`inline-flex items-center gap-4 ${className}`}>
-  <!-- Club Logo Placeholder -->
+<div class={`inline-flex items-center gap-6 ${className}`}>
+  <!-- Mac's MCC Official Logo -->
   <div class="relative">
-    <div class="w-20 h-20 bg-gradient-to-br from-accent to-secondary rounded-full flex items-center justify-center border-4 border-accent shadow-xl">
-      <span class="text-2xl font-black text-primary">🏍️</span>
-    </div>
+    <img 
+      src="/images/macs-official-logo.png" 
+      alt="Mac's MCC 1313 South Africa - Magnum Amicum Est" 
+      class="w-24 h-24 object-contain drop-shadow-2xl" 
+    />
   </div>
   
-  <!-- Club Name & Details -->
+  <!-- Event Title -->
   <div class="flex flex-col">
-    <span class="text-4xl font-black text-accent drop-shadow-lg" style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.2em; text-shadow: 3px 3px 6px rgba(0,0,0,0.9);">
-      MAC's MCC
-    </span>
-    <span class="text-sm text-accent font-bold tracking-widest" style="font-family: var(--font-display); text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
-      1313 • SOUTH AFRICA
-    </span>
-    <span class="text-base text-primary-content font-semibold tracking-wider" style="font-family: var(--font-sans); text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+    <span class="text-2xl font-bold text-accent tracking-wider" style="font-family: var(--font-display); text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
       Event Guide
+    </span>
+    <span class="text-sm text-primary-content font-semibold tracking-wider" style="font-family: var(--font-sans); text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+      Accommodation & Dining
     </span>
   </div>
 </div>

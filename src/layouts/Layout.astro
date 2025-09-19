@@ -23,7 +23,7 @@ const { title, class: className = '' } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
     </head>
-    <body class={`antialiased text-neutral bg-complementary font-sans ${className}`}>
+    <body class={`antialiased text-neutral font-sans macs-site-background ${className}`}>
         <div class="flex flex-col min-h-screen">
             <div class="flex flex-col w-full mx-auto grow">
                 <Header />
