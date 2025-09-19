@@ -4,20 +4,16 @@ import { siteConfig } from '../config/site.ts';
 import EntertainmentVenues from '../components/EntertainmentVenues.astro';
 ---
 
-<Layout title={siteConfig.title}>
+<Layout title={siteConfig.title} class="page-bg-accommodation">
     <!-- Event Info Section -->
-    <section class="hero-section -mx-6 sm:-mx-12 px-6 sm:px-12 py-20 mb-12 relative overflow-hidden">
-        <!-- Background pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <img src="/images/1er-long.png" alt="Mac's MCC Background" class="w-full h-full object-cover" />
-        </div>
+    <section class="hero-section mcc-bg-rotating -mx-6 sm:-mx-12 px-6 sm:px-12 py-20 mb-12 relative overflow-hidden">
         
         <!-- Hero content -->
         <div class="max-w-5xl mx-auto text-center relative z-10">
             <!-- Mac's MCC Patch Display -->
             <div class="flex justify-center items-center mb-8">
-                <div class="relative">
-                    <img src="/images/1er-patch-1.png" alt="Mac's MCC Patch" class="w-32 h-32 object-contain drop-shadow-2xl" />
+                <div class="relative bg-black/30 rounded-full p-4 border-4 border-accent">
+                    <img src="/images/1er-patch.png" alt="Mac's MCC 1313 South Africa" class="w-32 h-32 object-contain drop-shadow-2xl" />
                 </div>
             </div>
             

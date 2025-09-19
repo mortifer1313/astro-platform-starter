@@ -182,4 +182,92 @@
     .rider-friendly {
         @apply bg-accent text-accent-content px-2 py-1 rounded text-xs font-bold;
     }
+    
+    /* Mac's MCC Background Image Utilities */
+    .mcc-bg-cap {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(139, 0, 0, 0.3)), url('/images/1er-cap.png');
+        @apply bg-cover bg-center bg-no-repeat;
+    }
+    
+    .mcc-bg-hoodie {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(139, 0, 0, 0.3)), url('/images/1er-hoodie-1.png');
+        @apply bg-cover bg-center bg-no-repeat;
+    }
+    
+    .mcc-bg-long {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(139, 0, 0, 0.3)), url('/images/1er-long.png');
+        @apply bg-cover bg-center bg-no-repeat;
+    }
+    
+    .mcc-bg-short {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(139, 0, 0, 0.3)), url('/images/1er-short.png');
+        @apply bg-cover bg-center bg-no-repeat;
+    }
+    
+    .mcc-bg-patch {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(139, 0, 0, 0.3)), url('/images/1er-patch-1.png');
+        @apply bg-cover bg-center bg-no-repeat;
+    }
+    
+    /* Alternating background utility */
+    .mcc-bg-rotating {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .mcc-bg-rotating::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.8), rgba(139, 0, 0, 0.4)),
+            url('/images/1er-long.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -2;
+    }
+    
+    .mcc-bg-rotating::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(139, 0, 0, 0.2)),
+            url('/images/1er-hoodie-1.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        z-index: -1;
+        animation: fadeInOut 8s infinite alternate;
+    }
+    
+    @keyframes fadeInOut {
+        0% { opacity: 0.2; }
+        50% { opacity: 0.6; }
+        100% { opacity: 0.2; }
+    }
+    
+    /* Page-specific backgrounds */
+    .page-bg-dining {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.8), rgba(139, 0, 0, 0.4)),
+            url('/images/1er-cap.png');
+        @apply bg-cover bg-center bg-fixed;
+    }
+    
+    .page-bg-accommodation {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.8), rgba(139, 0, 0, 0.4)),
+            url('/images/1er-short.png');
+        @apply bg-cover bg-center bg-fixed;
+    }
+    
+    .page-bg-entertainment {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.8), rgba(139, 0, 0, 0.4)),
+            url('/images/1er-hoodie.png');
+        @apply bg-cover bg-center bg-fixed;
+    }
 }

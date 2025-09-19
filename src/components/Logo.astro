@@ -9,18 +9,21 @@ const { width = 200, height = 60, class: className = '' } = Astro.props;
 ---
 
 <div class={`inline-flex items-center gap-4 ${className}`}>
-  <!-- Mac's MCC Logo/Patch -->
+  <!-- Mac's MCC Official Logo -->
   <div class="relative">
-    <img src="/images/1er-patch-1.png" alt="Mac's MCC" class="w-16 h-16 object-contain" />
+    <img src="/images/1er-patch.png" alt="Mac's MCC 1313 South Africa" class="w-20 h-20 object-contain drop-shadow-xl" />
   </div>
   
-  <!-- Club Name -->
+  <!-- Club Name & Details -->
   <div class="flex flex-col">
-    <span class="text-3xl font-bold text-accent drop-shadow-lg" style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.15em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
-      Mac's MCC
+    <span class="text-4xl font-black text-accent drop-shadow-lg" style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.2em; text-shadow: 3px 3px 6px rgba(0,0,0,0.9);">
+      MAC's MCC
+    </span>
+    <span class="text-sm text-accent font-bold tracking-widest" style="font-family: var(--font-display); text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+      1313 • SOUTH AFRICA
     </span>
     <span class="text-base text-primary-content font-semibold tracking-wider" style="font-family: var(--font-sans); text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
-      Accommodation Guide
+      Event Guide
     </span>
   </div>
 </div>
