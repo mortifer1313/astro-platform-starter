@@ -1,129 +1,199 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { siteConfig } from '../config/site.ts';
-
-const eventIntro = `
-Welcome Brothers and Sisters to the **${siteConfig.event.name}**!
-
-This year's celebration runs **${siteConfig.event.dates}** at the legendary **${siteConfig.event.venue.name}**. Whether you're riding solo or with your crew, this guide has everything you need for an unforgettable weekend.
-
-Find **rider-friendly accommodation**, discover the best **local restaurants and bars**, get all the **event details**, and connect with brothers and sisters from across the region.
-
-*${siteConfig.event.theme}* - Let's make this year's celebration one for the history books!
-`;
 ---
 
 <Layout title={siteConfig.title}>
-    <!-- Hero Section -->
-    <section class="hero-section -mx-6 sm:-mx-12 px-6 sm:px-12 py-20 mb-16">
+    <!-- Event Info Section -->
+    <section class="hero-section -mx-6 sm:-mx-12 px-6 sm:px-12 py-16 mb-12">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="mc-badge inline-block mb-6">Mac's Motorcycle Club</div>
-            <h1 class="mb-6 text-primary-content">
-                Year-End Event Guide 2025
-            </h1>
-            <p class="text-xl text-primary-content/90 mb-8 leading-relaxed">
-                {siteConfig.event.theme}
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/event" class="btn btn-secondary btn-xl">
-                    📅 Event Details
-                </a>
-                <a href="/accommodation" class="btn btn-outline btn-xl">
-                    🏨 Find Lodging
-                </a>
+            <h1 class="mb-6 text-primary-content">{siteConfig.event.name}</h1>
+            <div class="bg-black/30 rounded-lg p-6 border-2 border-accent">
+                <p class="text-lg mb-2"><strong>📍 Venue:</strong> {siteConfig.event.venue.name}</p>
+                <p class="text-lg mb-2"><strong>📍 Address:</strong> {siteConfig.event.venue.address}</p>
+                <p class="text-lg"><strong>📅 Date:</strong> {siteConfig.event.dates}</p>
             </div>
         </div>
     </section>
-    
-    <!-- Quick Info Cards -->
-    <section class="mb-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Accommodation Areas -->
+    <section class="mb-12">
+        <h2 class="section-header mb-8">🏨 Accommodation Areas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {siteConfig.accommodationAreas.map((area) => (
+                <div class="bg-gradient-to-r from-accent to-secondary text-primary p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">🏘️ {area.name}</h3>
+                    <div class="bg-primary text-accent px-3 py-1 rounded-full inline-block text-sm font-semibold mb-3">
+                        {area.distance}
+                    </div>
+                    <p class="mb-2"><strong>Perfect For:</strong> {area.perfectFor}</p>
+                    <p>{area.description}</p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Price Ranges -->
+    <section class="mb-12">
+        <h2 class="section-header mb-8">💰 Price Ranges (Per Night)</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="card text-center">
-                <h3 class="mb-4 text-secondary">📅 Event Dates</h3>
-                <p class="text-2xl font-bold mb-2">{siteConfig.event.dates}</p>
-                <p class="text-sm text-neutral/70">4 Days of Brotherhood & Celebration</p>
+                <div class="text-secondary font-bold mb-2">🏨 HOTELS</div>
+                <div class="bg-accent text-accent-content px-4 py-2 rounded-full font-bold">R800 - R2500+</div>
             </div>
-            
             <div class="card text-center">
-                <h3 class="mb-4 text-secondary">📍 Venue</h3>
-                <p class="text-lg font-bold mb-2">{siteConfig.event.venue.name}</p>
-                <p class="text-sm text-neutral/70">{siteConfig.event.venue.address}</p>
+                <div class="text-secondary font-bold mb-2">🏡 GUESTHOUSES</div>
+                <div class="bg-accent text-accent-content px-4 py-2 rounded-full font-bold">R400 - R1200</div>
             </div>
-            
             <div class="card text-center">
-                <h3 class="mb-4 text-secondary">👥 Coordinator</h3>
-                <p class="text-lg font-bold mb-2">{siteConfig.contact.eventCoordinator}</p>
-                <p class="text-sm text-neutral/70">{siteConfig.contact.coordinatorPhone}</p>
+                <div class="text-secondary font-bold mb-2">🏠 SELF-CATERING</div>
+                <div class="bg-accent text-accent-content px-4 py-2 rounded-full font-bold">R300 - R800</div>
+            </div>
+            <div class="card text-center">
+                <div class="text-secondary font-bold mb-2">🎒 BUDGET</div>
+                <div class="bg-accent text-accent-content px-4 py-2 rounded-full font-bold">R150 - R400</div>
             </div>
         </div>
     </section>
-    
-    <!-- Main Content -->
-    <section class="mb-16">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-                <h2 class="section-header mb-8">Welcome Riders!</h2>
-                <div class="prose prose-lg max-w-none">
-                    <p class="text-lg leading-relaxed mb-6">
-                        Welcome Brothers and Sisters to the <strong class="text-secondary">{siteConfig.event.name}</strong>!
-                    </p>
-                    <p class="mb-6">
-                        This year's celebration runs <strong>{siteConfig.event.dates}</strong> at the legendary <strong>{siteConfig.event.venue.name}</strong>. Whether you're riding solo or with your crew, this guide has everything you need for an unforgettable weekend.
-                    </p>
-                    <p class="mb-6">
-                        Find <strong class="text-secondary">rider-friendly accommodation</strong>, discover the best <strong class="text-secondary">local restaurants and bars</strong>, get all the <strong class="text-secondary">event details</strong>, and connect with brothers and sisters from across the region.
-                    </p>
-                    <p class="text-accent font-semibold text-lg">
-                        <em>{siteConfig.event.theme}</em> - Let's make this year's celebration one for the history books!
-                    </p>
+
+    <!-- Booking Links -->
+    <section class="mb-12">
+        <h2 class="section-header mb-8">🔍 Book Now</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="https://www.booking.com/searchresults.html?ss=The+Grove+Mall+Pretoria" 
+               target="_blank" class="btn btn-secondary text-center">
+                📱 Booking.com
+            </a>
+            <a href="https://www.airbnb.com/s/Equestria--Pretoria--South-Africa" 
+               target="_blank" class="btn btn-secondary text-center">
+                🏠 Airbnb
+            </a>
+            <a href="https://www.lekkeslaap.co.za/accommodation/pretoria" 
+               target="_blank" class="btn btn-secondary text-center">
+                🇿🇦 LekkeSlaap
+            </a>
+            <a href="https://www.google.com/maps/search/hotels+near+The+Grove+Mall+Pretoria/" 
+               target="_blank" class="btn btn-secondary text-center">
+                🗺️ Google Maps
+            </a>
+        </div>
+    </section>
+
+    <!-- Getting There -->
+    <section class="mb-12">
+        <h2 class="section-header mb-8">🚗 Getting There</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card">
+                <h4 class="text-secondary font-bold mb-4">🛣️ From Johannesburg:</h4>
+                <ol class="list-decimal list-inside space-y-2 mb-4">
+                    <li>Take N1 North towards Pretoria</li>
+                    <li>Exit at Lynnwood Road (Exit 367)</li>
+                    <li>Follow signs to Equestria/The Grove</li>
+                    <li>Turn onto The Highway (M18)</li>
+                    <li>The Grove Mall will be on your right</li>
+                </ol>
+                <p><strong>Drive Time:</strong> 45-60 minutes</p>
+            </div>
+            
+            <div class="card">
+                <h4 class="text-secondary font-bold mb-4">🏙️ From Pretoria CBD:</h4>
+                <ol class="list-decimal list-inside space-y-2 mb-4">
+                    <li>Head east on Church Street</li>
+                    <li>Turn right onto Lynnwood Road</li>
+                    <li>Continue to The Highway (M18)</li>
+                    <li>Turn left onto The Highway</li>
+                    <li>The Grove Mall will be on your left</li>
+                </ol>
+                <p><strong>Drive Time:</strong> 15-20 minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Tips -->
+    <section class="mb-12">
+        <h2 class="section-header mb-8">💡 Booking Tips</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="card">
+                <h4 class="text-secondary font-semibold mb-3">📅 Book Early</h4>
+                <p class="text-sm">Secure better rates and availability for weekend events</p>
+            </div>
+            <div class="card">
+                <h4 class="text-secondary font-semibold mb-3">🔄 Compare Prices</h4>
+                <p class="text-sm">Check multiple platforms and call direct for better rates</p>
+            </div>
+            <div class="card">
+                <h4 class="text-secondary font-semibold mb-3">🅿️ Confirm Parking</h4>
+                <p class="text-sm">Ensure secure motorcycle parking is available</p>
+            </div>
+            <div class="card">
+                <h4 class="text-secondary font-semibold mb-3">⭐ Read Reviews</h4>
+                <p class="text-sm">Check recent guest experiences for cleanliness and service</p>
+            </div>
+            <div class="card">
+                <h4 class="text-secondary font-semibold mb-3">❌ Cancellation Policy</h4>
+                <p class="text-sm">Understand terms in case plans change</p>
+            </div>
+            <div class="card">
+                <h4 class="text-secondary font-semibold mb-3">📍 Verify Location</h4>
+                <p class="text-sm">Double-check distance to venue and transport options</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contacts -->
+    <section class="bg-secondary/10 -mx-6 sm:-mx-12 px-6 sm:px-12 py-12 mb-12">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="section-header mb-8 text-center">📞 Emergency Contacts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card-dark text-center">
+                    <div class="mb-2">🚨 Police</div>
+                    <div class="text-2xl font-bold text-accent">{siteConfig.emergency.police}</div>
+                </div>
+                <div class="card-dark text-center">
+                    <div class="mb-2">🏥 Medical</div>
+                    <div class="text-2xl font-bold text-accent">{siteConfig.emergency.medical}</div>
+                </div>
+                <div class="card-dark text-center">
+                    <div class="mb-2">🚔 Local Police</div>
+                    <div class="text-2xl font-bold text-accent">{siteConfig.emergency.localPolice}</div>
                 </div>
             </div>
-            
-            <div>
-                <h2 class="section-header mb-8">Quick Access</h2>
-                <div class="space-y-4">
-                    <a href="/accommodation" class="card-dark block hover:scale-105 transition-transform">
-                        <div class="flex items-center gap-4">
-                            <span class="text-3xl">🏨</span>
-                            <div>
-                                <h3 class="text-lg font-bold">Accommodation</h3>
-                                <p class="text-sm opacity-80">Bike-friendly hotels & motels</p>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="/dining" class="card-dark block hover:scale-105 transition-transform">
-                        <div class="flex items-center gap-4">
-                            <span class="text-3xl">🍻</span>
-                            <div>
-                                <h3 class="text-lg font-bold">Food & Drink</h3>
-                                <p class="text-sm opacity-80">Local restaurants & biker bars</p>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="/area" class="card-dark block hover:scale-105 transition-transform">
-                        <div class="flex items-center gap-4">
-                            <span class="text-3xl">🗺️</span>
-                            <div>
-                                <h3 class="text-lg font-bold">Local Area</h3>
-                                <p class="text-sm opacity-80">Attractions & things to do</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
-    
-    <!-- Call to Action -->
-    <section class="text-center bg-secondary/10 -mx-6 sm:-mx-12 px-6 sm:px-12 py-16">
-        <h2 class="mb-4">Ready to Roll?</h2>
-        <p class="text-lg mb-8 max-w-2xl mx-auto">
-            Got questions? Need help with registration? Our event coordinator is here to help make your experience unforgettable.
-        </p>
-        <a href="/contact" class="btn btn-secondary btn-xl">
-            Contact Event Coordinator
-        </a>
+
+    <!-- Share Section -->
+    <section class="text-center bg-accent/20 -mx-6 sm:-mx-12 px-6 sm:px-12 py-16">
+        <h2 class="mb-4">📤 Share This Guide</h2>
+        <p class="text-lg mb-8">Send this page to fellow MAC'S MC members!</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="shareGuide()" class="btn btn-primary">
+                📱 Share Link
+            </button>
+            <button onclick="copyLink()" class="btn btn-outline">
+                📋 Copy Link
+            </button>
+        </div>
     </section>
 </Layout>
+
+<script>
+function shareGuide() {
+    if (navigator.share) {
+        navigator.share({
+            title: "MAC'S MC - Accommodation Guide",
+            text: "MAC'S MC End-Year Event Accommodation Guide - Last Weekend November 2024",
+            url: window.location.href
+        }).catch(console.error);
+    } else {
+        copyLink();
+    }
+}
+
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+        alert('Link copied to clipboard! Share it with other members.');
+    }).catch(function() {
+        prompt('Copy this link:', window.location.href);
+    });
+}
+</script>

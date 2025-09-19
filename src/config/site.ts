@@ -1,19 +1,19 @@
 export const siteConfig = {
-  name: "Mac's Motorcycle Club",
-  title: "Mac's MC Year-End Event Guide - Accommodation & Entertainment",
-  description: "Your complete guide to Mac's Motorcycle Club Year-End Event. Find accommodation, restaurants, bars, and event details for club members traveling to the celebration.",
+  name: "Mac's MC",
+  title: "MAC'S MC - Accommodation Guide",
+  description: "MAC'S MC End-Year Event Accommodation Guide - Padstal, The Grove Mall, Equestria, Pretoria",
   url: "https://macsmccaccomodation.netlify.app",
   
   // Event Information
   event: {
-    name: "Mac's MC Year-End Celebration",
-    dates: "December 28-31, 2025",
+    name: "End-Year Event",
+    dates: "Last Weekend in November 2024",
     venue: {
-      name: "Thunder Valley Event Center",
-      address: "456 Rider's Way, Steel City, SC 29401",
-      phone: "+1 (555) 789-0123"
+      name: "Padstal, The Grove Mall",
+      address: "265 The Hwy St, Equestria, Pretoria, 0184",
+      phone: ""
     },
-    theme: "Ride Together, Celebrate Together"
+    theme: "MAC'S MC End-Year Celebration"
   },
   
   // Club Contact Information
@@ -59,13 +59,45 @@ export const siteConfig = {
     "motorcycle restaurants"
   ],
   
+  // Accommodation Areas
+  accommodationAreas: [
+    {
+      name: "EQUESTRIA",
+      distance: "3-5km from venue",
+      perfectFor: "Closest location, secure environment, family-friendly",
+      description: "Shopping centers nearby, easy venue access, safe residential area"
+    },
+    {
+      name: "FAERIE GLEN", 
+      distance: "5-7km from venue",
+      perfectFor: "Upmarket accommodation, boutique options",
+      description: "Premium properties, quiet affluent area, higher-end dining"
+    },
+    {
+      name: "GARSFONTEIN",
+      distance: "6-8km from venue", 
+      perfectFor: "Family groups, good value for money",
+      description: "Family-oriented, competitive pricing, suburban feel"
+    },
+    {
+      name: "MENLO PARK",
+      distance: "8-10km from venue",
+      perfectFor: "Business travelers, transport connections", 
+      description: "Business district, excellent highway access, hotel chains"
+    }
+  ],
+  
+  // Emergency Contacts
+  emergency: {
+    police: "10111",
+    medical: "10177", 
+    localPolice: "012 354 1500"
+  },
+  
   // Navigation
   navigation: [
     { name: "Home", href: "/" },
-    { name: "Event Details", href: "/event" },
     { name: "Accommodation", href: "/accommodation" },
-    { name: "Food & Drink", href: "/dining" },
-    { name: "Local Area", href: "/area" },
-    { name: "Contact", href: "/contact" }
+    { name: "Food & Drink", href: "/dining" }
   ]
 };
