@@ -1,0 +1,232 @@
+---
+// Entertainment venues data extracted from Google Maps
+const venues = [
+  {
+    name: "Trikes Restaurant",
+    rating: 4.4,
+    reviews: 53,
+    type: "Restaurant",
+    address: "5 Boendoe Ave",
+    priceRange: "Moderate",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 10 am Sat",
+    specialty: "Family Restaurant"
+  },
+  {
+    name: "Tivoli Sports Bar", 
+    rating: 4.1,
+    reviews: 218,
+    type: "Sports bar",
+    address: "14 Wapadrand Shopping Center, Wapadrand Rd",
+    priceRange: "Budget-Friendly",
+    services: ["Dine-in", "Takeaway"],
+    specialty: "Sports & Entertainment"
+  },
+  {
+    name: "Mask Pub & Grill",
+    rating: 4.1,
+    reviews: 185,
+    type: "Pub",
+    address: "Rubida Street, 362 Rossouw St",
+    priceRange: "R 100–150",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 10 am Sat",
+    specialty: "Pub Food & Atmosphere"
+  },
+  {
+    name: "Bossa Atterbury",
+    rating: 4.2,
+    reviews: 256,
+    type: "Restaurant",
+    address: "Atterbury Value Mart, 2001 Atterbury Rd",
+    priceRange: "Moderate",
+    services: ["Dine-in", "Takeaway"],
+    specialty: "Contemporary Dining"
+  },
+  {
+    name: "Hennie's Waterkloof",
+    rating: 4.8,
+    reviews: 623,
+    type: "Restaurant",
+    address: "Cnr Main and Waterkloof Corner, Rupert St",
+    priceRange: "Premium",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Closes 12 am",
+    specialty: "Fine Dining"
+  },
+  {
+    name: "Malt Barrel & Fire Silverlakes",
+    rating: 4.3,
+    reviews: 1600,
+    type: "Restaurant",
+    address: "Willow Acres Estate",
+    priceRange: "Moderate",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Closes 12 am",
+    specialty: "Grill & Craft Beer"
+  },
+  {
+    name: "Texan Wing Bar Pretoria East",
+    rating: 4.8,
+    reviews: 466,
+    type: "Restaurant",
+    address: "Willows Crossing, Rossouw St",
+    priceRange: "R 300–400",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 11:30 am Sat",
+    specialty: "Wings & American Cuisine"
+  },
+  {
+    name: "Crawdaddy's Waterglen",
+    rating: 4.5,
+    reviews: 2500,
+    type: "Restaurant",
+    address: "Waterglen Shopping Centre, Garstfontein Rd",
+    priceRange: "Moderate",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 11 am Sat",
+    specialty: "Seafood & Grill",
+    note: "Situated very near to Menlyn Maine"
+  },
+  {
+    name: "Die Eiland Pub & Grill",
+    rating: 4.2,
+    reviews: 628,
+    type: "Pub",
+    address: "Small Holding, 301 Moepel St",
+    priceRange: "Budget-Friendly",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 10 am Sat",
+    specialty: "Traditional Pub & Grill"
+  },
+  {
+    name: "Picasso's Pub & Pizzeria",
+    rating: 4.2,
+    reviews: 947,
+    type: "Pub",
+    address: "Central Location",
+    priceRange: "R 100–150",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Closes 12 am",
+    specialty: "Pizza & Pub Atmosphere"
+  }
+];
+
+// Function to get rating stars
+function getRatingStars(rating: number) {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  let stars = '';
+  
+  for (let i = 0; i < fullStars; i++) {
+    stars += '⭐';
+  }
+  if (hasHalfStar) {
+    stars += '⭐'; // Using full star for simplicity
+  }
+  
+  return stars;
+}
+
+// Function to get price range color
+function getPriceColor(priceRange: string) {
+  if (priceRange.includes('300') || priceRange.includes('400') || priceRange === 'Premium') {
+    return 'bg-secondary text-secondary-content';
+  } else if (priceRange.includes('100') || priceRange.includes('150')) {
+    return 'bg-accent text-accent-content';
+  }
+  return 'bg-primary text-primary-content';
+}
+
+// Function to get type icon
+function getTypeIcon(type: string) {
+  switch (type.toLowerCase()) {
+    case 'restaurant': return '🍽️';
+    case 'sports bar': return '⚽';
+    case 'pub': return '🍺';
+    default: return '🏢';
+  }
+}
+---
+
+<section class="mb-12">
+  <h2 class="section-header mb-8">🍽️ Entertainment & Dining</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {venues.map((venue) => (
+      <div class="card hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+        <div class="flex justify-between items-start mb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">{getTypeIcon(venue.type)}</span>
+            <h3 class="text-xl font-bold text-accent mb-0">{venue.name}</h3>
+          </div>
+          <div class={`px-2 py-1 rounded-full text-xs font-bold ${getPriceColor(venue.priceRange)}`}>
+            {venue.priceRange}
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-lg">{getRatingStars(venue.rating)}</span>
+            <span class="text-secondary font-semibold">{venue.rating}</span>
+            <span class="text-sm text-neutral">({venue.reviews.toLocaleString()} reviews)</span>
+          </div>
+          <div class="text-sm text-secondary font-semibold mb-2">{venue.specialty}</div>
+        </div>
+        
+        <div class="text-sm mb-3">
+          <div class="flex items-start gap-2 mb-1">
+            <span class="text-accent">📍</span>
+            <span>{venue.address}</span>
+          </div>
+          {venue.hours && (
+            <div class="flex items-center gap-2 text-xs text-neutral">
+              <span class="text-accent">🕐</span>
+              <span>{venue.hours}</span>
+            </div>
+          )}
+        </div>
+        
+        <div class="flex flex-wrap gap-2 mb-3">
+          {venue.services.map((service) => (
+            <span class="mc-badge text-xs">{service}</span>
+          ))}
+        </div>
+        
+        {venue.note && (
+          <div class="text-xs bg-accent/20 rounded p-2 border-l-2 border-accent">
+            💡 {venue.note}
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+  
+  <!-- Entertainment Tips -->
+  <div class="mt-8 p-6 bg-gradient-to-r from-secondary/20 to-accent/20 rounded-lg border-l-4 border-secondary">
+    <h3 class="text-accent font-bold mb-4">🏍️ Rider Tips for Night Out</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <div>
+        <strong class="text-secondary">🚫 Ride Safe:</strong> 
+        <span class="text-neutral-content">Designate a sober rider or use ride-sharing services</span>
+      </div>
+      <div>
+        <strong class="text-secondary">🅿️ Parking:</strong> 
+        <span class="text-neutral-content">Most venues have secure parking areas</span>
+      </div>
+      <div>
+        <strong class="text-secondary">👥 Group Discounts:</strong> 
+        <span class="text-neutral-content">Many places offer deals for motorcycle club groups</span>
+      </div>
+      <div>
+        <strong class="text-secondary">📱 Reservations:</strong> 
+        <span class="text-neutral-content">Call ahead for larger groups, especially weekends</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .card:hover {
+    transform: translateY(-2px);
+  }
+</style>
