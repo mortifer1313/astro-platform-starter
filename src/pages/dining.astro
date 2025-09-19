@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import VenueCard from '../components/VenueCard.astro';
+import { siteConfig } from '../config/site.ts';
+
+const pageTitle = "Food & Drink - Mac's MC Year-End Event Guide";
+
+// Sample venue data - you can replace this with real local venues
+const venues = [
+  {
+    name: "Thunder Road Grill",
+    type: "restaurant" as const,
+    address: "123 Main Street, Steel City, SC",
+    phone: "+1 (555) 123-FOOD",
+    distance: "0.5 miles",
+    bikerFriendly: true,
+    features: ["Bike Parking", "Live Music", "Outdoor Seating", "Full Bar"],
+    description: "Classic American grill known for massive portions and biker-friendly atmosphere. Famous for their Thunder Burger and weekend live music.",
+    hours: "11:00 AM - 11:00 PM",
+    website: "https://thunderroadgrill.com"
+  },
+  {
+    name: "Steel City Saloon",
+    type: "bar" as const,
+    address: "456 Rider Avenue, Steel City, SC",
+    phone: "+1 (555) 456-BEER",
+    distance: "0.3 miles",
+    bikerFriendly: true,
+    features: ["Pool Tables", "Dart Boards", "Bike Parking", "Live Music Weekends"],
+    description: "Local biker hangout with cold beer, good company, and the best jukebox in town. Weekly bike nights every Thursday.",
+    hours: "2:00 PM - 2:00 AM",
+    website: "https://steelcitysaloon.com"
+  },
+  {
+    name: "Roadhouse BBQ",
+    type: "restaurant" as const,
+    address: "789 Highway 101, Steel City, SC",
+    phone: "+1 (555) 789-RIBS",
+    distance: "1.2 miles",
+    bikerFriendly: true,
+    features: ["BBQ Pit", "Outdoor Dining", "Large Bike Parking Area"],
+    description: "Authentic BBQ joint with slow-smoked meats and homestyle sides. Popular stop for touring riders.",
+    hours: "11:00 AM - 9:00 PM"
+  },
+  {
+    name: "Chrome & Coffee",
+    type: "cafe" as const,
+    address: "321 Engine Street, Steel City, SC",
+    phone: "+1 (555) 321-JAVA",
+    distance: "0.7 miles",
+    bikerFriendly: false,
+    features: ["Specialty Coffee", "Fresh Pastries", "WiFi"],
+    description: "Cozy coffee shop perfect for morning fuel-ups. Great espresso and friendly service.",
+    hours: "6:00 AM - 3:00 PM"
+  },
+  {
+    name: "The Iron Horse",
+    type: "entertainment" as const,
+    address: "555 Music Row, Steel City, SC",
+    phone: "+1 (555) 555-ROCK",
+    distance: "0.8 miles",
+    bikerFriendly: true,
+    features: ["Live Bands", "Large Dance Floor", "Full Bar", "Bike Valet"],
+    description: "Premier live music venue featuring rock, country, and blues acts. Weekend dance parties and special MC events.",
+    hours: "7:00 PM - 2:00 AM (Thu-Sat)",
+    website: "https://ironhorsevenue.com"
+  },
+  {
+    name: "Mama's Kitchen",
+    type: "restaurant" as const,
+    address: "888 Family Way, Steel City, SC",
+    phone: "+1 (555) 888-MAMA",
+    distance: "1.5 miles",
+    bikerFriendly: false,
+    features: ["Home Cooking", "Daily Specials", "Family Portions"],
+    description: "Traditional family restaurant serving hearty home-cooked meals. Famous for their breakfast and Sunday dinner specials.",
+    hours: "6:00 AM - 8:00 PM"
+  }
+];
+
+const bikerFriendlyVenues = venues.filter(venue => venue.bikerFriendly);
+const restaurants = venues.filter(venue => venue.type === 'restaurant');
+const bars = venues.filter(venue => venue.type === 'bar');
+const entertainment = venues.filter(venue => venue.type === 'entertainment');
+---
+
+<Layout title={pageTitle}>
+  <!-- Hero Section -->
+  <section class="hero-section -mx-6 sm:-mx-12 px-6 sm:px-12 py-16 mb-12">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="mb-4 text-primary-content">
+        Food & Drink Guide
+      </h1>
+      <p class="text-lg text-primary-content/90 mb-6">
+        Local restaurants, bars, and entertainment spots near {siteConfig.event.venue.name}
+      </p>
+      <div class="mc-badge inline-block">
+        Curated for Mac's MC Members
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="mb-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="text-center p-4 bg-surface-secondary rounded-lg">
+        <div class="text-2xl font-bold text-secondary">{venues.length}</div>
+        <div class="text-sm text-neutral/70">Total Venues</div>
+      </div>
+      <div class="text-center p-4 bg-surface-secondary rounded-lg">
+        <div class="text-2xl font-bold text-secondary">{bikerFriendlyVenues.length}</div>
+        <div class="text-sm text-neutral/70">Biker Friendly</div>
+      </div>
+      <div class="text-center p-4 bg-surface-secondary rounded-lg">
+        <div class="text-2xl font-bold text-secondary">{restaurants.length}</div>
+        <div class="text-sm text-neutral/70">Restaurants</div>
+      </div>
+      <div class="text-center p-4 bg-surface-secondary rounded-lg">
+        <div class="text-2xl font-bold text-secondary">{bars.length}</div>
+        <div class="text-sm text-neutral/70">Bars & Pubs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biker Friendly Highlights -->
+  <section class="mb-12">
+    <h2 class="section-header mb-8">🏍️ Biker Friendly Spots</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {bikerFriendlyVenues.map((venue) => (
+        <VenueCard {...venue} />
+      ))}
+    </div>
+  </section>
+
+  <!-- All Venues by Category -->
+  <section class="mb-12">
+    <h2 class="section-header mb-8">All Local Venues</h2>
+    
+    <!-- Restaurants -->
+    <div class="mb-10">
+      <h3 class="text-xl font-semibold mb-6 text-secondary flex items-center gap-2">
+        🍽️ Restaurants
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {restaurants.map((venue) => (
+          <VenueCard {...venue} />
+        ))}
+      </div>
+    </div>
+
+    <!-- Bars -->
+    <div class="mb-10">
+      <h3 class="text-xl font-semibold mb-6 text-secondary flex items-center gap-2">
+        🍻 Bars & Pubs
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {bars.map((venue) => (
+          <VenueCard {...venue} />
+        ))}
+      </div>
+    </div>
+
+    <!-- Entertainment -->
+    <div class="mb-10">
+      <h3 class="text-xl font-semibold mb-6 text-secondary flex items-center gap-2">
+        🎵 Entertainment
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {entertainment.map((venue) => (
+          <VenueCard {...venue} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips Section -->
+  <section class="bg-primary/5 -mx-6 sm:-mx-12 px-6 sm:px-12 py-12 mb-12">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="section-header mb-8">🍴 Dining Tips for Riders</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-secondary">Before You Go</h3>
+          <ul class="space-y-2 text-sm">
+            <li>• Call ahead for large groups (6+ riders)</li>
+            <li>• Ask about bike parking availability</li>
+            <li>• Check if they offer group discounts</li>
+            <li>• Verify hours - some venues have seasonal schedules</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-secondary">Rider Etiquette</h3>
+          <ul class="space-y-2 text-sm">
+            <li>• Park bikes considerately</li>
+            <li>• Support biker-friendly establishments</li>
+            <li>• Tip well - represent the club positively</li>
+            <li>• Share your experiences with other members</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="text-center">
+    <h2 class="mb-4">Missing a Great Spot?</h2>
+    <p class="text-lg mb-6">
+      Know a biker-friendly venue we should add? Let our event coordinator know!
+    </p>
+    <a href="/contact" class="btn btn-secondary btn-lg">
+      Suggest a Venue
+    </a>
+  </section>
+</Layout>

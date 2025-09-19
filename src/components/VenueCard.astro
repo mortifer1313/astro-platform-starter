@@ -1,0 +1,130 @@
+---
+interface Props {
+  name: string;
+  type: 'restaurant' | 'bar' | 'cafe' | 'entertainment';
+  address: string;
+  phone?: string;
+  distance: string;
+  bikerFriendly?: boolean;
+  features: string[];
+  description: string;
+  hours?: string;
+  website?: string;
+}
+
+const { 
+  name, 
+  type, 
+  address, 
+  phone, 
+  distance, 
+  bikerFriendly = false, 
+  features, 
+  description, 
+  hours,
+  website 
+} = Astro.props;
+
+const typeIcon = {
+  restaurant: '🍽️',
+  bar: '🍻',
+  cafe: '☕',
+  entertainment: '🎵'
+};
+
+const typeColor = {
+  restaurant: 'bg-green-100 text-green-800',
+  bar: 'bg-amber-100 text-amber-800',
+  cafe: 'bg-blue-100 text-blue-800',
+  entertainment: 'bg-purple-100 text-purple-800'
+};
+---
+
+<div class="card hover:shadow-xl transition-all duration-200">
+  <div class="flex flex-col h-full">
+    <!-- Header -->
+    <div class="flex items-start justify-between mb-3">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">{typeIcon[type]}</span>
+        <div>
+          <h3 class="text-lg font-bold text-primary">{name}</h3>
+          <span class={`text-xs px-2 py-1 rounded-full font-medium ${typeColor[type]} capitalize`}>
+            {type}
+          </span>
+        </div>
+      </div>
+      {bikerFriendly && (
+        <div class="rider-friendly">
+          🏍️ BIKER FRIENDLY
+        </div>
+      )}
+    </div>
+    
+    <!-- Description -->
+    <p class="text-sm text-neutral/80 mb-4 flex-grow">
+      {description}
+    </p>
+    
+    <!-- Location & Distance -->
+    <div class="space-y-2 mb-4">
+      <div class="flex items-center gap-2 text-sm">
+        <span class="text-secondary">📍</span>
+        <span>{address}</span>
+      </div>
+      <div class="flex items-center gap-2 text-sm">
+        <span class="text-secondary">🛣️</span>
+        <span class="font-medium">{distance} from venue</span>
+      </div>
+      {phone && (
+        <div class="flex items-center gap-2 text-sm">
+          <span class="text-secondary">📞</span>
+          <a href={`tel:${phone}`} class="hover:text-secondary transition-colors">
+            {phone}
+          </a>
+        </div>
+      )}
+      {hours && (
+        <div class="flex items-center gap-2 text-sm">
+          <span class="text-secondary">🕐</span>
+          <span>{hours}</span>
+        </div>
+      )}
+    </div>
+    
+    <!-- Features -->
+    {features.length > 0 && (
+      <div class="mb-4">
+        <h4 class="text-sm font-semibold text-neutral/70 mb-2">Features:</h4>
+        <div class="flex flex-wrap gap-1">
+          {features.map((feature) => (
+            <span class="text-xs bg-surface-secondary text-neutral px-2 py-1 rounded">
+              {feature}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+    
+    <!-- Actions -->
+    <div class="flex gap-2 pt-3 border-t border-gray-200">
+      {website && (
+        <a 
+          href={website} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn btn-outline flex-1 text-sm"
+        >
+          Visit Website
+        </a>
+      )}
+      {phone && (
+        <a 
+          href={`tel:${phone}`} 
+          class="btn btn-secondary flex-1 text-sm"
+        >
+          Call Now
+        </a>
+      )}
+    </div>
+  </div>
+</div>
