@@ -5,76 +5,100 @@ import { siteConfig } from '../config/site.ts';
 
 const pageTitle = "Food & Drink - Mac's MC Year-End Event Guide";
 
-// Sample venue data - you can replace this with real local venues
+// Real local Pretoria venues near The Grove Mall
 const venues = [
   {
-    name: "Thunder Road Grill",
+    name: "The Local Grill Lynnwood",
     type: "restaurant" as const,
-    address: "123 Main Street, Steel City, SC",
-    phone: "+1 (555) 123-FOOD",
-    distance: "0.5 miles",
+    address: "Lynnwood Bridge Centre, Daventry St, Lynnwood",
+    phone: "+27 12 361 8888",
+    distance: "2.5 km",
     bikerFriendly: true,
-    features: ["Bike Parking", "Live Music", "Outdoor Seating", "Full Bar"],
-    description: "Classic American grill known for massive portions and biker-friendly atmosphere. Famous for their Thunder Burger and weekend live music.",
-    hours: "11:00 AM - 11:00 PM",
-    website: "https://thunderroadgrill.com"
+    features: ["Bike Parking", "Live Sports", "Pool Tables", "Outdoor Seating"],
+    description: "Popular sports bar and grill known for excellent steaks and craft beers. Biker-friendly atmosphere with secure parking.",
+    hours: "11:00 AM - 2:00 AM",
+    website: "https://www.thelocalgrill.co.za"
   },
   {
-    name: "Steel City Saloon",
+    name: "Flanagan's Irish Pub Lynnwood",
     type: "bar" as const,
-    address: "456 Rider Avenue, Steel City, SC",
-    phone: "+1 (555) 456-BEER",
-    distance: "0.3 miles",
+    address: "Lynnwood Corner Centre, Lynnwood Rd",
+    phone: "+27 12 348 5678",
+    distance: "2.8 km",
     bikerFriendly: true,
-    features: ["Pool Tables", "Dart Boards", "Bike Parking", "Live Music Weekends"],
-    description: "Local biker hangout with cold beer, good company, and the best jukebox in town. Weekly bike nights every Thursday.",
-    hours: "2:00 PM - 2:00 AM",
-    website: "https://steelcitysaloon.com"
+    features: ["Live Music", "Guinness on Tap", "Pool Tables", "Irish Atmosphere"],
+    description: "Authentic Irish pub with live music and a welcoming atmosphere for bikers. Weekly live bands and traditional Irish fare.",
+    hours: "12:00 PM - 2:00 AM",
+    website: "https://www.flanagans.co.za"
   },
   {
-    name: "Roadhouse BBQ",
+    name: "Cappuccinos Lynnwood",
     type: "restaurant" as const,
-    address: "789 Highway 101, Steel City, SC",
-    phone: "+1 (555) 789-RIBS",
-    distance: "1.2 miles",
+    address: "Lynnwood Bridge Centre, Daventry St, Lynnwood", 
+    phone: "+27 12 348 1234",
+    distance: "2.5 km",
     bikerFriendly: true,
-    features: ["BBQ Pit", "Outdoor Dining", "Large Bike Parking Area"],
-    description: "Authentic BBQ joint with slow-smoked meats and homestyle sides. Popular stop for touring riders.",
-    hours: "11:00 AM - 9:00 PM"
+    features: ["Italian Cuisine", "Wine Selection", "Late Night Dining", "Cocktails"],
+    description: "Italian restaurant and cocktail bar popular with locals. Great pasta, pizzas and extensive wine list.",
+    hours: "9:00 AM - 1:00 AM"
   },
   {
-    name: "Chrome & Coffee",
-    type: "cafe" as const,
-    address: "321 Engine Street, Steel City, SC",
-    phone: "+1 (555) 321-JAVA",
-    distance: "0.7 miles",
-    bikerFriendly: false,
-    features: ["Specialty Coffee", "Fresh Pastries", "WiFi"],
-    description: "Cozy coffee shop perfect for morning fuel-ups. Great espresso and friendly service.",
-    hours: "6:00 AM - 3:00 PM"
-  },
-  {
-    name: "The Iron Horse",
-    type: "entertainment" as const,
-    address: "555 Music Row, Steel City, SC",
-    phone: "+1 (555) 555-ROCK",
-    distance: "0.8 miles",
-    bikerFriendly: true,
-    features: ["Live Bands", "Large Dance Floor", "Full Bar", "Bike Valet"],
-    description: "Premier live music venue featuring rock, country, and blues acts. Weekend dance parties and special MC events.",
-    hours: "7:00 PM - 2:00 AM (Thu-Sat)",
-    website: "https://ironhorsevenue.com"
-  },
-  {
-    name: "Mama's Kitchen",
+    name: "Woodlands Bar & Grill",
     type: "restaurant" as const,
-    address: "888 Family Way, Steel City, SC",
-    phone: "+1 (555) 888-MAMA",
-    distance: "1.5 miles",
+    address: "Woodlands Boulevard, Moreleta Park",
+    phone: "+27 12 998 1111",
+    distance: "4.2 km",
+    bikerFriendly: true,
+    features: ["Garden Setting", "Craft Beer", "Outdoor Dining", "Wine Selection"],
+    description: "Upmarket bar and grill with beautiful garden setting. Known for excellent grilled meats and craft beer selection.",
+    hours: "11:00 AM - 1:00 AM"
+  },
+  {
+    name: "Silver Lakes Golf Club Bar", 
+    type: "bar" as const,
+    address: "Silver Lakes Golf Estate, Moreleta Park",
+    phone: "+27 12 809 0000",
+    distance: "5.1 km",
     bikerFriendly: false,
-    features: ["Home Cooking", "Daily Specials", "Family Portions"],
-    description: "Traditional family restaurant serving hearty home-cooked meals. Famous for their breakfast and Sunday dinner specials.",
-    hours: "6:00 AM - 8:00 PM"
+    features: ["Golf Views", "Club Atmosphere", "Wine Selection", "Upmarket"],
+    description: "Elegant 19th hole bar with stunning golf course views. Perfect for a more refined dining experience.",
+    hours: "10:00 AM - 10:00 PM"
+  },
+  {
+    name: "Rocco Mamas Faerie Glen",
+    type: "restaurant" as const,
+    address: "Faerie Glen Centre, Faerie Glen",
+    phone: "+27 12 991 7777",
+    distance: "6.3 km",
+    bikerFriendly: true,
+    features: ["American Food", "Burgers", "Cocktails", "Casual Dining"],
+    description: "American-style bar and grill famous for massive burgers and cocktails. Casual atmosphere perfect for groups.",
+    hours: "11:00 AM - 12:00 AM",
+    website: "https://www.roccomamas.co.za"
+  },
+  {
+    name: "Ocean Basket Faerie Glen",
+    type: "restaurant" as const,
+    address: "Faerie Glen Centre, Faerie Glen",
+    phone: "+27 12 991 9999",
+    distance: "6.3 km",
+    bikerFriendly: false,
+    features: ["Fresh Seafood", "Mediterranean", "Wine Pairing", "Health Conscious"],
+    description: "Mediterranean seafood restaurant with fresh daily catches. Excellent wine selection and healthy options.",
+    hours: "11:00 AM - 10:00 PM",
+    website: "https://www.oceanbasket.com"
+  },
+  {
+    name: "Turn 'n Tender Faerie Glen",
+    type: "restaurant" as const,
+    address: "Faerie Glen Centre, Faerie Glen",
+    phone: "+27 12 991 2222", 
+    distance: "6.3 km",
+    bikerFriendly: true,
+    features: ["Premium Steaks", "Wine Selection", "Intimate Setting", "Date Night"],
+    description: "Premium steakhouse known for excellent cuts of meat and romantic atmosphere. Perfect for special occasions.",
+    hours: "12:00 PM - 11:00 PM",
+    website: "https://www.turntender.co.za"
   }
 ];
 
