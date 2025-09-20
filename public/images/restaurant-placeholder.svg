@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd700;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bg)"/>
+  
+  <!-- Restaurant icon -->
+  <circle cx="200" cy="120" r="40" fill="#fff" opacity="0.9"/>
+  <text x="200" y="135" font-family="Arial" font-size="40" text-anchor="middle" fill="#8b0000">🍽️</text>
+  
+  <!-- Text -->
+  <text x="200" y="200" font-family="Arial Black" font-size="24" font-weight="bold" text-anchor="middle" fill="#fff">
+    RESTAURANT
+  </text>
+  <text x="200" y="230" font-family="Arial" font-size="16" text-anchor="middle" fill="#fff">
+    MAC'S MCC VENUE
+  </text>
+</svg>

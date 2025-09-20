@@ -1,5 +1,5 @@
 ---
-// Entertainment venues data extracted from Google Maps
+// Entertainment venues data - 20 venues from Google Maps links + local Pretoria venues
 const venues = [
   {
     name: "Trikes Restaurant",
@@ -11,21 +11,21 @@ const venues = [
     services: ["Dine-in", "Takeaway"],
     hours: "Opens 10 am Sat",
     specialty: "Family Restaurant",
-    image: "/images/venues/trikes-restaurant.jpg",
-    website: "https://www.tripadvisor.com/Restaurant_Review-g312578-d12345678-Reviews-Trikes_Restaurant-Pretoria.html",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/17DNCCFB5x2rQfORg",
     slug: "trikes-restaurant"
   },
   {
     name: "Tivoli Sports Bar", 
     rating: 4.1,
     reviews: 218,
-    type: "Sports bar",
+    type: "Sports Bar",
     address: "14 Wapadrand Shopping Center, Wapadrand Rd",
     priceRange: "Budget-Friendly",
     services: ["Dine-in", "Takeaway"],
     specialty: "Sports & Entertainment",
-    image: "/images/venues/tivoli-sports-bar.jpg",
-    website: "https://www.facebook.com/TivoliSportsBar",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/Eg1vodSvI1T97EvEb",
     slug: "tivoli-sports-bar"
   },
   {
@@ -38,8 +38,8 @@ const venues = [
     services: ["Dine-in", "Takeaway"],
     hours: "Opens 10 am Sat",
     specialty: "Pub Food & Atmosphere",
-    image: "/images/venues/mask-pub-grill.jpg",
-    website: "https://www.zomato.com/pretoria/mask-pub-grill",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/APlGMlfoU5ulhAfuI",
     slug: "mask-pub-grill"
   },
   {
@@ -51,8 +51,8 @@ const venues = [
     priceRange: "Moderate",
     services: ["Dine-in", "Takeaway"],
     specialty: "Contemporary Dining",
-    image: "/images/venues/bossa-atterbury.jpg",
-    website: "https://www.bossarestaurant.co.za",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/BO6BFXfQWixoBQ15f",
     slug: "bossa-atterbury"
   },
   {
@@ -65,8 +65,8 @@ const venues = [
     services: ["Dine-in", "Takeaway"],
     hours: "Closes 12 am",
     specialty: "Fine Dining",
-    image: "/images/venues/hennies-waterkloof.jpg",
-    website: "https://www.hennieswaterkloof.co.za",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/C41HbR5o6lfyWJ25l",
     slug: "hennies-waterkloof"
   },
   {
@@ -79,9 +79,9 @@ const venues = [
     services: ["Dine-in", "Takeaway"],
     hours: "Closes 12 am",
     specialty: "Grill & Craft Beer",
-    image: "/images/venues/malt-barrel-fire.jpg",
-    website: "https://www.maltbarrel.co.za",
-    slug: "malt-barrel-fire"
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/ZKH1EfopjstvBwVE8",
+    slug: "malt-barrel-fire-silverlakes"
   },
   {
     name: "Texan Wing Bar Pretoria East",
@@ -93,23 +93,23 @@ const venues = [
     services: ["Dine-in", "Takeaway"],
     hours: "Opens 11:30 am Sat",
     specialty: "Wings & American Cuisine",
-    image: "/images/venues/texan-wing-bar.jpg",
-    website: "https://www.texanwingbar.co.za",
-    slug: "texan-wing-bar"
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/NEhmu0rU2MkVfTXRI",
+    slug: "texan-wing-bar-pretoria-east"
   },
   {
     name: "Crawdaddy's Waterglen",
     rating: 4.5,
     reviews: 2500,
     type: "Restaurant",
-    address: "Waterglen Shopping Centre, Garstfontein Rd",
+    address: "Waterglen Shopping Centre, Garstfontein Rd & January Masilela Dr",
     priceRange: "Moderate",
     services: ["Dine-in", "Takeaway"],
     hours: "Opens 11 am Sat",
     specialty: "Seafood & Grill",
     note: "Situated very near to Menlyn Maine",
-    image: "/images/venues/crawdaddys-waterglen.jpg",
-    website: "https://www.crawdaddys.co.za",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/CWdUmmOiUxmVEfcPb",
     slug: "crawdaddys-waterglen"
   },
   {
@@ -122,9 +122,9 @@ const venues = [
     services: ["Dine-in", "Takeaway"],
     hours: "Opens 10 am Sat",
     specialty: "Traditional Pub & Grill",
-    image: "/images/venues/die-eiland-pub.jpg",
-    website: "https://www.facebook.com/DieEilandPub",
-    slug: "die-eiland-pub"
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/WrxsTnVhsCJQqVlLC",
+    slug: "die-eiland-pub-grill"
   },
   {
     name: "Picasso's Pub & Pizzeria",
@@ -136,9 +136,148 @@ const venues = [
     services: ["Dine-in", "Takeaway"],
     hours: "Closes 12 am",
     specialty: "Pizza & Pub Atmosphere",
-    image: "/images/venues/picassos-pizzeria.jpg",
-    website: "https://www.picassospub.co.za",
-    slug: "picassos-pizzeria"
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/KnPn6tF7W9wJkvlyN",
+    slug: "picassos-pub-pizzeria"
+  },
+  {
+    name: "Ocean Basket - The Grove", 
+    rating: 4.3,
+    reviews: 340,
+    type: "Restaurant",
+    address: "The Grove Mall, 265 The Hwy St, Equestria",
+    priceRange: "Moderate",
+    services: ["Dine-in", "Takeaway"],
+    specialty: "Seafood & Mediterranean",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.oceanbasket.com",
+    slug: "ocean-basket-grove"
+  },
+  {
+    name: "Wimpy - The Grove",
+    rating: 4.0,
+    reviews: 120,
+    type: "Restaurant",
+    address: "The Grove Mall, 265 The Hwy St, Equestria",
+    priceRange: "Budget-Friendly",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 7 am daily",
+    specialty: "Family Restaurant & Burgers",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.wimpy.co.za",
+    slug: "wimpy-grove"
+  },
+  {
+    name: "KFC - The Grove",
+    rating: 3.8,
+    reviews: 200,
+    type: "Restaurant",
+    address: "The Grove Mall, 265 The Hwy St, Equestria",
+    priceRange: "Budget-Friendly",
+    services: ["Dine-in", "Takeaway"],
+    specialty: "Chicken & Fast Food",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.kfc.co.za",
+    slug: "kfc-grove"
+  },
+  {
+    name: "Nando's - Lynnwood",
+    rating: 4.1,
+    reviews: 450,
+    type: "Restaurant",
+    address: "Lynnwood Bridge, Daventry St, Lynnwood",
+    priceRange: "Moderate",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 11 am daily",
+    specialty: "Flame-Grilled Chicken",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.nandos.co.za",
+    slug: "nandos-lynnwood"
+  },
+  {
+    name: "McDonald's - Lynnwood Bridge",
+    rating: 3.9,
+    reviews: 850,
+    type: "Restaurant",
+    address: "Lynnwood Bridge, Daventry St, Lynnwood",
+    priceRange: "Budget-Friendly",
+    services: ["Dine-in", "Takeaway", "Drive-thru"],
+    hours: "Open 24 hours",
+    specialty: "Fast Food & Burgers",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.mcdonalds.co.za",
+    slug: "mcdonalds-lynnwood"
+  },
+  {
+    name: "Steers - Equestria",
+    rating: 4.0,
+    reviews: 320,
+    type: "Restaurant",
+    address: "Equestria Shopping Centre, Aramist Ave",
+    priceRange: "Budget-Friendly",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 9 am daily",
+    specialty: "Flame-Grilled Burgers",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.steers.co.za",
+    slug: "steers-equestria"
+  },
+  {
+    name: "Mugg & Bean - Lynnwood",
+    rating: 4.2,
+    reviews: 450,
+    type: "Restaurant",
+    address: "Lynnwood Bridge Centre, Daventry St",
+    priceRange: "Moderate",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 7 am daily",
+    specialty: "Coffee & Light Meals",
+    note: "Perfect for breakfast meetings",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.muggandbean.co.za",
+    slug: "mugg-bean-lynnwood"
+  },
+  {
+    name: "Roman's Pizza - Equestria",
+    rating: 4.1,
+    reviews: 180,
+    type: "Restaurant",
+    address: "Equestria Shopping Centre, Aramist Ave",
+    priceRange: "Budget-Friendly",
+    services: ["Dine-in", "Takeaway", "Delivery"],
+    hours: "Opens 11 am daily",
+    specialty: "Pizza & Italian Food",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.romanspizza.co.za",
+    slug: "romans-pizza-equestria"
+  },
+  {
+    name: "Spur - Lynnwood Bridge",
+    rating: 4.3,
+    reviews: 680,
+    type: "Restaurant",
+    address: "Lynnwood Bridge Centre, Daventry St",
+    priceRange: "Moderate",
+    services: ["Dine-in", "Takeaway"],
+    hours: "Opens 8 am daily",
+    specialty: "Family Restaurant & Steakhouse",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://www.spur.co.za",
+    slug: "spur-lynnwood"
+  },
+  {
+    name: "The Hussar Grill - Menlyn",
+    rating: 4.6,
+    reviews: 890,
+    type: "Restaurant",
+    address: "Menlyn Park Shopping Centre",
+    priceRange: "Premium",
+    services: ["Dine-in"],
+    hours: "Opens 12 pm daily",
+    specialty: "Premium Steakhouse & Fine Dining",
+    image: "/images/restaurant-placeholder.svg",
+    website: "https://share.google/T8tWrDeC1rkg8G4wva",
+    slug: "hussar-grill-menlyn"
   }
 ];
 

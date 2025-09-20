@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Black+Ops+One&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -37,9 +37,11 @@
     
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-display);
-        @apply text-primary font-semibold;
+        @apply text-neutral font-semibold;
+        color: #c0c0c0; /* Silver color */
         text-transform: uppercase;
         letter-spacing: 0.05em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
     
     h1 {
@@ -170,13 +172,15 @@
     
     .hero-section {
         @apply bg-gradient-to-br from-primary via-dark to-secondary text-primary-content;
-        background-image: var(--background-image-noise);
         position: relative;
         border-bottom: 4px solid var(--color-accent);
+        overflow: hidden;
     }
     
     .section-header {
         @apply border-b-2 border-secondary pb-4 mb-8;
+        color: #c0c0c0 !important; /* Silver color with !important to override */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
     }
     
     .rider-friendly {
@@ -185,13 +189,7 @@
     
     /* Mac's MCC Site-Wide Background */
     .macs-site-background {
-        background-image: 
-            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-            url('/images/macs-45th-anniversary.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-surface) 50%, var(--color-secondary) 100%);
     }
     
     /* Page-specific backgrounds */

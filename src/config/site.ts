@@ -7,7 +7,7 @@ export const siteConfig = {
   // Event Information
   event: {
     name: "End-Year Event",
-    dates: "Last Weekend in November 2024",
+    dates: "Last Weekend in November 2025",
     venue: {
       name: "Padstal, The Grove Mall",
       address: "265 The Hwy St, Equestria, Pretoria, 0184",

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#bg)" stroke="#000" stroke-width="5"/>
+  
+  <!-- MAC'S text -->
+  <text x="100" y="85" font-family="Arial Black, Arial" font-size="28" font-weight="bold" text-anchor="middle" fill="#000" stroke="#fff" stroke-width="1">
+    MAC'S
+  </text>
+  
+  <!-- MCC text -->
+  <text x="100" y="115" font-family="Arial Black, Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#000" stroke="#fff" stroke-width="1">
+    MCC
+  </text>
+  
+  <!-- 1313 text -->
+  <text x="100" y="140" font-family="Arial Black, Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#fff" stroke="#000" stroke-width="0.5">
+    1313
+  </text>
+  
+  <!-- South Africa text -->
+  <text x="100" y="160" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff" stroke="#000" stroke-width="0.5">
+    SOUTH AFRICA
+  </text>
+</svg>
