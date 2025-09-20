@@ -40,64 +40,64 @@ const typeColor = {
 };
 ---
 
-<div class="card hover:shadow-xl transition-all duration-200">
+<div class="venue-card hover:shadow-xl transition-all duration-200">
   <div class="flex flex-col h-full">
     <!-- Header -->
     <div class="flex items-start justify-between mb-3">
       <div class="flex items-center gap-2">
         <span class="text-2xl">{typeIcon[type]}</span>
         <div>
-          <h3 class="text-lg font-bold text-primary">{name}</h3>
-          <span class={`text-xs px-2 py-1 rounded-full font-medium ${typeColor[type]} capitalize`}>
+          <h3 class="venue-name">{name}</h3>
+          <span class="venue-type">
             {type}
           </span>
         </div>
       </div>
       {bikerFriendly && (
-        <div class="rider-friendly">
+        <div class="biker-friendly-badge">
           🏍️ BIKER FRIENDLY
         </div>
       )}
     </div>
     
     <!-- Description -->
-    <p class="text-sm text-neutral/80 mb-4 flex-grow">
+    <p class="venue-description">
       {description}
     </p>
     
     <!-- Location & Distance -->
-    <div class="space-y-2 mb-4">
-      <div class="flex items-center gap-2 text-sm">
-        <span class="text-secondary">📍</span>
-        <span>{address}</span>
+    <div class="venue-details">
+      <div class="venue-detail-item">
+        <span class="detail-icon">📍</span>
+        <span class="detail-text">{address}</span>
       </div>
-      <div class="flex items-center gap-2 text-sm">
-        <span class="text-secondary">🛣️</span>
-        <span class="font-medium">{distance} from venue</span>
+      <div class="venue-detail-item">
+        <span class="detail-icon">🛣️</span>
+        <span class="detail-text font-medium">{distance} from venue</span>
       </div>
       {phone && (
-        <div class="flex items-center gap-2 text-sm">
-          <span class="text-secondary">📞</span>
-          <a href={`tel:${phone}`} class="hover:text-secondary transition-colors">
+        <div class="venue-detail-item">
+          <span class="detail-icon">📞</span>
+          <a href={`tel:${phone}`} class="detail-link">
             {phone}
           </a>
         </div>
       )}
       {hours && (
-        <div class="flex items-center gap-2 text-sm">
-          <span class="text-secondary">🕐</span>
-          <span>{hours}</span>
+        <div class="venue-detail-item">
+          <span class="detail-icon">🕐</span>
+          <span class="detail-text">{hours}</span>
         </div>
       )}
     </div>
     
     <!-- Features -->
     {features.length > 0 && (
-      <div class="mb-4">
-        <h4 class="text-sm font-semibold text-neutral/70 mb-2">Features:</h4>
-        <div class="flex flex-wrap gap-1">
+      <div class="features-section">
+        <h4 class="features-title">Features:</h4>
+        <div class="features-list">
           {features.map((feature) => (
-            <span class="text-xs bg-surface-secondary text-neutral px-2 py-1 rounded">
+            <span class="feature-tag">
               {feature}
             </span>
           ))}
@@ -106,13 +106,13 @@ const typeColor = {
     )}
     
     <!-- Actions -->
-    <div class="flex gap-2 pt-3 border-t border-gray-200">
+    <div class="actions-section">
       {website && (
         <a 
           href={website} 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="btn btn-outline flex-1 text-sm"
+          class="action-btn website-btn"
         >
           Visit Website
         </a>
@@ -120,7 +120,7 @@ const typeColor = {
       {phone && (
         <a 
           href={`tel:${phone}`} 
-          class="btn btn-secondary flex-1 text-sm"
+          class="action-btn call-btn"
         >
           Call Now
         </a>
@@ -128,3 +128,156 @@ const typeColor = {
     </div>
   </div>
 </div>
+
+<style>
+  .venue-card {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #c0c0c0;
+    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
+  }
+  
+  .venue-card:hover {
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+    border-color: #ffed4e;
+    transform: translateY(-2px);
+  }
+  
+  .venue-name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #c0c0c0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    margin-bottom: 0.25rem;
+  }
+  
+  .venue-type {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    background: #ffd700;
+    color: #000000;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  
+  .biker-friendly-badge {
+    background: #ffd700;
+    color: #000000;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .venue-description {
+    font-size: 0.875rem;
+    color: #c0c0c0;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    line-height: 1.4;
+  }
+  
+  .venue-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .venue-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .detail-icon {
+    color: #ffd700;
+  }
+  
+  .detail-text {
+    color: #c0c0c0;
+  }
+  
+  .detail-link {
+    color: #c0c0c0;
+    text-decoration: none;
+  }
+  
+  .detail-link:hover {
+    color: #ffd700;
+    transition: color 0.2s;
+  }
+  
+  .features-section {
+    margin-bottom: 1rem;
+  }
+  
+  .features-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #c0c0c0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  
+  .feature-tag {
+    font-size: 0.75rem;
+    background: rgba(255, 215, 0, 0.2);
+    color: #ffd700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ffd700;
+  }
+  
+  .actions-section {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #ffd700;
+  }
+  
+  .action-btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  
+  .website-btn {
+    background: transparent;
+    color: #c0c0c0;
+    border: 1px solid #c0c0c0;
+  }
+  
+  .website-btn:hover {
+    background: #c0c0c0;
+    color: #000000;
+  }
+  
+  .call-btn {
+    background: #ffd700;
+    color: #000000;
+    border: 1px solid #ffd700;
+  }
+  
+  .call-btn:hover {
+    background: #ffed4e;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+  }
+</style>
