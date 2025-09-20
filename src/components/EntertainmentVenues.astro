@@ -1,493 +1,177 @@
 ---
-// Entertainment venues data - Bars from Lynnwood, Moreleta Park, and Faerie Glen
+// Simple Food & Drink venues for Lynnwood, Moreleta Park, and Faerie Glen
 const venues = [
-  // Lynnwood Bars
+  // Lynnwood venues
   {
     name: "The Local Grill Lynnwood",
-    rating: 4.3,
-    reviews: 420,
-    type: "Bar & Grill",
-    address: "Lynnwood Bridge Centre, Daventry St, Lynnwood",
-    priceRange: "Moderate",
-    services: ["Dine-in", "Takeaway", "Bar Service"],
-    hours: "11:00 AM - 2:00 AM",
-    specialty: "Sports Bar with Craft Beers & Steaks",
-    phone: "+27 12 361 8888",
-    features: ["Live Sports", "Pool Tables", "Outdoor Seating", "Craft Beer"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.thelocalgrill.co.za",
-    slug: "local-grill-lynnwood"
-  },
-  {
-    name: "Cappuccinos Lynnwood",
-    rating: 4.2,
-    reviews: 680,
-    type: "Bar & Restaurant",
-    address: "Lynnwood Bridge Centre, Daventry St, Lynnwood",
-    priceRange: "Moderate",
-    services: ["Dine-in", "Bar Service", "Takeaway"],
-    hours: "9:00 AM - 1:00 AM",
-    specialty: "Italian Restaurant & Cocktail Bar",
-    phone: "+27 12 348 1234",
-    features: ["Cocktails", "Italian Food", "Wine Selection", "Late Night"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.cappuccinos.co.za",
-    slug: "cappuccinos-lynnwood"
-  },
-  {
-    name: "Flanagan's Irish Pub Lynnwood",
-    rating: 4.4,
-    reviews: 520,
-    type: "Irish Pub",
-    address: "Lynnwood Corner Centre, Lynnwood Rd",
-    priceRange: "Budget-Friendly",
-    services: ["Bar Service", "Pub Food", "Live Music"],
-    hours: "12:00 PM - 2:00 AM",
-    specialty: "Authentic Irish Pub with Live Music",
-    phone: "+27 12 348 5678",
-    features: ["Live Music", "Irish Atmosphere", "Pool Tables", "Guinness on Tap"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.flanagans.co.za",
-    slug: "flanagans-lynnwood"
-  },
-  {
-    name: "Eastwoods Tavern Lynnwood",
-    rating: 4.1,
-    reviews: 380,
-    type: "Sports Bar",
-    address: "Eastwood Shopping Centre, Lynnwood",
-    priceRange: "Budget-Friendly",
-    services: ["Bar Service", "Sports Viewing", "Snacks"],
-    hours: "2:00 PM - 2:00 AM",
-    specialty: "Local Sports Bar with Big Screen TVs",
-    phone: "+27 12 361 9999",
-    features: ["Big Screen TVs", "Pool Tables", "Darts", "Local Crowd"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "#",
-    slug: "eastwoods-tavern-lynnwood"
-  },
-  {
-    name: "News Cafe Lynnwood",
-    rating: 4.0,
-    reviews: 750,
-    type: "Bar & Cafe",
+    type: "Restaurant",
+    area: "Lynnwood",
     address: "Lynnwood Bridge Centre, Daventry St",
-    priceRange: "Moderate",
-    services: ["Bar Service", "Coffee", "Light Meals"],
-    hours: "7:00 AM - 2:00 AM",
-    specialty: "All-day Bar & Cafe with Cocktails",
-    phone: "+27 12 348 2222",
-    features: ["All Day Menu", "Cocktails", "Coffee", "WiFi"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.newscafe.co.za",
-    slug: "news-cafe-lynnwood"
+    phone: "+27 12 361 8888",
+    specialty: "Steaks & Sports Bar",
+    features: ["Live Sports", "Pool Tables", "Outdoor Seating"]
+  },
+  {
+    name: "Cappuccinos Lynnwood", 
+    type: "Restaurant & Bar",
+    area: "Lynnwood",
+    address: "Lynnwood Bridge Centre, Daventry St",
+    phone: "+27 12 348 1234",
+    specialty: "Italian Food & Cocktails",
+    features: ["Late Night", "Wine Selection", "Italian Cuisine"]
+  },
+  {
+    name: "Flanagan's Irish Pub",
+    type: "Pub",
+    area: "Lynnwood", 
+    address: "Lynnwood Corner Centre",
+    phone: "+27 12 348 5678",
+    specialty: "Irish Pub with Live Music",
+    features: ["Live Music", "Guinness", "Pool Tables"]
   },
   
-  // Moreleta Park Bars
+  // Moreleta Park venues
   {
     name: "Woodlands Bar & Grill",
-    rating: 4.5,
-    reviews: 290,
     type: "Bar & Grill",
-    address: "Woodlands Boulevard, Moreleta Park",
-    priceRange: "Moderate",
-    services: ["Dine-in", "Bar Service", "Outdoor Dining"],
-    hours: "11:00 AM - 1:00 AM",
-    specialty: "Upmarket Bar with Garden Setting",
-    phone: "+27 12 998 1111",
-    features: ["Garden Setting", "Craft Beer", "Wine Selection", "Grills"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "#",
-    slug: "woodlands-bar-grill"
+    area: "Moreleta Park",
+    address: "Woodlands Boulevard",
+    phone: "+27 12 998 1111", 
+    specialty: "Upmarket Bar with Garden",
+    features: ["Garden Setting", "Craft Beer", "Wine Selection"]
   },
   {
-    name: "Silver Lakes Golf Club Bar",
-    rating: 4.3,
-    reviews: 180,
+    name: "Silver Lakes Golf Club",
     type: "Golf Club Bar",
-    address: "Silver Lakes Golf Estate, Moreleta Park",
-    priceRange: "Moderate",
-    services: ["Bar Service", "Restaurant", "Golf Club"],
-    hours: "10:00 AM - 10:00 PM",
-    specialty: "Golf Club with 19th Hole Bar",
+    area: "Moreleta Park",
+    address: "Silver Lakes Golf Estate", 
     phone: "+27 12 809 0000",
-    features: ["Golf Views", "Club Atmosphere", "Wine Selection", "Upmarket"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.silverlakesgolf.co.za",
-    slug: "silver-lakes-golf-bar"
-  },
-  {
-    name: "Moreleta Kloof Nature Reserve Pub",
-    rating: 4.2,
-    reviews: 150,
-    type: "Nature Bar",
-    address: "Moreleta Kloof Nature Reserve, Moreleta Park",
-    priceRange: "Budget-Friendly",
-    services: ["Bar Service", "Nature Views", "Braai Facilities"],
-    hours: "9:00 AM - 6:00 PM",
-    specialty: "Nature Reserve Bar with Scenic Views",
-    phone: "+27 12 998 5555",
-    features: ["Nature Views", "Braai Area", "Outdoor Setting", "Day Drinking"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "#",
-    slug: "moreleta-kloof-pub"
-  },
-  {
-    name: "The Venue Country Hotel Bar",
-    rating: 4.4,
-    reviews: 220,
-    type: "Hotel Bar",
-    address: "The Venue Country Hotel, Moreleta Park",
-    priceRange: "Premium",
-    services: ["Bar Service", "Fine Dining", "Events"],
-    hours: "12:00 PM - 12:00 AM",
-    specialty: "Upmarket Hotel Bar with Events",
-    phone: "+27 12 998 7777",
-    features: ["Hotel Bar", "Events Venue", "Wine Cellar", "Fine Dining"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.thevenuecountryhotel.co.za",
-    slug: "venue-country-hotel-bar"
-  },
-  {
-    name: "Hazeldean Square Pub",
-    rating: 3.9,
-    reviews: 310,
-    type: "Pub",
-    address: "Hazeldean Square, Moreleta Park",
-    priceRange: "Budget-Friendly",
-    services: ["Bar Service", "Pub Food", "Sports"],
-    hours: "2:00 PM - 2:00 AM",
-    specialty: "Neighborhood Pub with Sports",
-    phone: "+27 12 998 3333",
-    features: ["Sports TV", "Pool Tables", "Pub Quiz", "Local Crowd"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "#",
-    slug: "hazeldean-square-pub"
+    specialty: "19th Hole Bar",
+    features: ["Golf Views", "Upmarket", "Club Atmosphere"]
   },
   
-  // Faerie Glen Bars
-  {
-    name: "Faerie Glen Spur",
-    rating: 4.1,
-    reviews: 450,
-    type: "Family Bar",
-    address: "Faerie Glen Centre, Faerie Glen",
-    priceRange: "Moderate",
-    services: ["Bar Service", "Family Restaurant", "Takeaway"],
-    hours: "9:00 AM - 11:00 PM",
-    specialty: "Family Restaurant with Full Bar",
-    phone: "+27 12 991 1111",
-    features: ["Family Friendly", "Full Bar", "Steaks", "Kids Menu"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.spur.co.za",
-    slug: "faerie-glen-spur"
-  },
-  {
-    name: "Turn 'n Tender Faerie Glen",
-    rating: 4.2,
-    reviews: 380,
-    type: "Steakhouse Bar",
-    address: "Faerie Glen Centre, Faerie Glen",
-    priceRange: "Moderate",
-    services: ["Bar Service", "Steakhouse", "Wine Selection"],
-    hours: "12:00 PM - 11:00 PM",
-    specialty: "Steakhouse with Wine Bar",
-    phone: "+27 12 991 2222",
-    features: ["Premium Steaks", "Wine Selection", "Intimate Setting", "Date Night"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.turntender.co.za",
-    slug: "turn-tender-faerie-glen"
-  },
-  {
-    name: "Faerie Glen Country Club",
-    rating: 4.3,
-    reviews: 200,
-    type: "Country Club",
-    address: "Faerie Glen Golf Course, Faerie Glen",
-    priceRange: "Premium",
-    services: ["Bar Service", "Golf Club", "Events"],
-    hours: "10:00 AM - 10:00 PM",
-    specialty: "Exclusive Country Club Bar",
-    phone: "+27 12 991 3333",
-    features: ["Golf Course Views", "Members Club", "Events", "Upmarket"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.faerieglengolf.co.za",
-    slug: "faerie-glen-country-club"
-  },
-  {
-    name: "The Werf Country Estate",
-    rating: 4.4,
-    reviews: 160,
-    type: "Estate Bar",
-    address: "The Werf Country Estate, Faerie Glen",
-    priceRange: "Premium",
-    services: ["Bar Service", "Fine Dining", "Weddings"],
-    hours: "11:00 AM - 12:00 AM",
-    specialty: "Country Estate with Exclusive Bar",
-    phone: "+27 12 991 4444",
-    features: ["Country Setting", "Wedding Venue", "Fine Dining", "Exclusive"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.thewerf.co.za",
-    slug: "werf-country-estate"
-  },
-  {
-    name: "Café Vienna Faerie Glen",
-    rating: 4.0,
-    reviews: 290,
-    type: "Cafe Bar",
-    address: "Faerie Glen Shopping Centre, Faerie Glen",
-    priceRange: "Moderate",
-    services: ["Bar Service", "Coffee", "Light Meals"],
-    hours: "7:00 AM - 10:00 PM",
-    specialty: "European Style Cafe Bar",
-    phone: "+27 12 991 5555",
-    features: ["European Style", "Coffee Bar", "Light Meals", "WiFi"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "#",
-    slug: "cafe-vienna-faerie-glen"
-  },
-  {
-    name: "Bushwillows Lodge Bar",
-    rating: 4.2,
-    reviews: 120,
-    type: "Lodge Bar",
-    address: "Bushwillows Lodge, Faerie Glen",
-    priceRange: "Moderate",
-    services: ["Bar Service", "Accommodation", "Conference"],
-    hours: "12:00 PM - 11:00 PM",
-    specialty: "Lodge Bar with Conference Facilities",
-    phone: "+27 12 991 6666",
-    features: ["Lodge Setting", "Conference Bar", "Quiet Atmosphere", "Business"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.bushwillowslodge.co.za",
-    slug: "bushwillows-lodge-bar"
-  },
+  // Faerie Glen venues
   {
     name: "Rocco Mamas Faerie Glen",
-    rating: 4.1,
-    reviews: 520,
-    type: "American Bar",
-    address: "Faerie Glen Centre, Faerie Glen",
-    priceRange: "Moderate",
-    services: ["Bar Service", "American Food", "Cocktails"],
-    hours: "11:00 AM - 12:00 AM",
-    specialty: "American Style Bar & Grill",
+    type: "American Bar & Grill", 
+    area: "Faerie Glen",
+    address: "Faerie Glen Centre",
     phone: "+27 12 991 7777",
-    features: ["American Food", "Cocktails", "Burgers", "Casual Dining"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.roccomamas.co.za",
-    slug: "rocco-mamas-faerie-glen"
-  },
-  {
-    name: "Mythos Faerie Glen",
-    rating: 4.0,
-    reviews: 340,
-    type: "Greek Bar",
-    address: "Faerie Glen Shopping Centre, Faerie Glen",
-    priceRange: "Moderate",
-    services: ["Bar Service", "Greek Food", "Ouzo Bar"],
-    hours: "12:00 PM - 11:00 PM",
-    specialty: "Greek Restaurant with Ouzo Bar",
-    phone: "+27 12 991 8888",
-    features: ["Greek Cuisine", "Ouzo Selection", "Mediterranean", "Live Music"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.mythos.co.za",
-    slug: "mythos-faerie-glen"
+    specialty: "American Style Bar",
+    features: ["Burgers", "Cocktails", "Casual Dining"]
   },
   {
     name: "Ocean Basket Faerie Glen",
-    rating: 4.2,
-    reviews: 410,
-    type: "Seafood Bar",
-    address: "Faerie Glen Centre, Faerie Glen",
-    priceRange: "Moderate",
-    services: ["Bar Service", "Seafood", "Wine Selection"],
-    hours: "11:00 AM - 10:00 PM",
-    specialty: "Seafood Restaurant with Wine Bar",
+    type: "Seafood Restaurant",
+    area: "Faerie Glen", 
+    address: "Faerie Glen Centre",
     phone: "+27 12 991 9999",
-    features: ["Fresh Seafood", "Wine Pairing", "Mediterranean", "Health Conscious"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.oceanbasket.com",
-    slug: "ocean-basket-faerie-glen"
+    specialty: "Seafood & Wine Bar",
+    features: ["Fresh Seafood", "Wine Pairing", "Mediterranean"]
   },
   {
-    name: "Wimpy Faerie Glen",
-    rating: 3.8,
-    reviews: 280,
-    type: "Family Bar",
-    address: "Faerie Glen Shopping Centre, Faerie Glen",
-    priceRange: "Budget-Friendly",
-    services: ["Bar Service", "Family Restaurant", "Breakfast"],
-    hours: "6:00 AM - 10:00 PM",
-    specialty: "Family Restaurant with Licensed Bar",
-    phone: "+27 12 991 0000",
-    features: ["Family Friendly", "All Day Breakfast", "Affordable", "Kids Menu"],
-    image: "/images/restaurant-placeholder.svg",
-    website: "https://www.wimpy.co.za",
-    slug: "wimpy-faerie-glen"
+    name: "Turn 'n Tender Faerie Glen",
+    type: "Steakhouse",
+    area: "Faerie Glen",
+    address: "Faerie Glen Centre", 
+    phone: "+27 12 991 2222",
+    specialty: "Premium Steakhouse",
+    features: ["Premium Steaks", "Wine Selection", "Date Night"]
   }
 ];
-
-// Function to get rating stars
-function getRatingStars(rating: number) {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-  let stars = '';
-  
-  for (let i = 0; i < fullStars; i++) {
-    stars += '⭐';
-  }
-  if (hasHalfStar) {
-    stars += '⭐'; // Using full star for simplicity
-  }
-  
-  return stars;
-}
-
-// Function to get price range color
-function getPriceColor(priceRange: string) {
-  if (priceRange.includes('300') || priceRange.includes('400') || priceRange === 'Premium') {
-    return 'bg-secondary text-secondary-content';
-  } else if (priceRange.includes('100') || priceRange.includes('150')) {
-    return 'bg-accent text-accent-content';
-  }
-  return 'bg-primary text-primary-content';
-}
-
-// Function to get type icon
-function getTypeIcon(type: string) {
-  switch (type.toLowerCase()) {
-    case 'restaurant': return '🍽️';
-    case 'sports bar': return '⚽';
-    case 'pub': return '🍺';
-    default: return '🏢';
-  }
-}
 ---
 
 <section class="mb-12">
-  <h2 class="section-header mb-8">🍽️ Entertainment & Dining</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    {venues.map((venue) => (
-      <div class="card hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-        <!-- Venue Image -->
-        <div class="relative h-48 mb-4 -mx-6 -mt-6 overflow-hidden">
-          <img 
-            src={venue.image} 
-            alt={venue.name}
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div class={`absolute top-3 right-3 px-2 py-1 rounded-full text-xs font-bold ${getPriceColor(venue.priceRange)}`}>
-            {venue.priceRange}
-          </div>
-        </div>
-        
-        <!-- Venue Header -->
-        <div class="flex justify-between items-start mb-3">
-          <div class="flex items-center gap-2">
-            <span class="text-2xl">{getTypeIcon(venue.type)}</span>
-            <h3 class="text-xl font-bold text-accent mb-0">{venue.name}</h3>
-          </div>
-        </div>
-        
-        <!-- Rating & Specialty -->
-        <div class="mb-3">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-lg">{getRatingStars(venue.rating)}</span>
-            <span class="text-secondary font-semibold">{venue.rating}</span>
-            <span class="text-sm text-neutral">({venue.reviews.toLocaleString()} reviews)</span>
-          </div>
-          <div class="text-sm text-secondary font-semibold mb-2">{venue.specialty}</div>
-        </div>
-        
-        <!-- Address & Hours -->
-        <div class="text-sm mb-3">
-          <div class="flex items-start gap-2 mb-1">
-            <span class="text-accent">📍</span>
-            <span>{venue.address}</span>
-          </div>
-          {venue.hours && (
-            <div class="flex items-center gap-2 text-xs text-neutral mb-1">
-              <span class="text-accent">🕐</span>
-              <span>{venue.hours}</span>
-            </div>
-          )}
-          {venue.phone && (
-            <div class="flex items-center gap-2 text-xs text-neutral">
-              <span class="text-accent">📞</span>
-              <span>{venue.phone}</span>
-            </div>
-          )}
-        </div>
-        
-        <!-- Features -->
-        {venue.features && venue.features.length > 0 && (
-          <div class="mb-3">
-            <div class="text-xs text-secondary font-semibold mb-1">Features:</div>
+  <h2 class="section-header mb-8">🍽️ Food & Drink</h2>
+  
+  <!-- Areas with venues -->
+  <div class="space-y-8">
+    
+    <!-- Lynnwood -->
+    <div>
+      <h3 class="text-2xl font-bold text-accent mb-4">🏙️ Lynnwood</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {venues.filter(venue => venue.area === "Lynnwood").map((venue) => (
+          <div class="card">
+            <h4 class="font-bold text-secondary mb-2">{venue.name}</h4>
+            <p class="text-sm text-accent font-semibold mb-2">{venue.type}</p>
+            <p class="text-sm mb-2">{venue.specialty}</p>
+            <p class="text-xs text-neutral mb-2">📍 {venue.address}</p>
+            <p class="text-xs text-neutral mb-3">📞 {venue.phone}</p>
             <div class="flex flex-wrap gap-1">
               {venue.features.map((feature) => (
                 <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs">{feature}</span>
               ))}
             </div>
           </div>
-        )}
-        
-        <!-- Services -->
-        <div class="flex flex-wrap gap-2 mb-4">
-          {venue.services.map((service) => (
-            <span class="mc-badge text-xs">{service}</span>
-          ))}
-        </div>
-        
-        <!-- Website Link -->
-        <div class="mb-3">
-          <a 
-            href={venue.website} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="btn btn-secondary w-full text-center hover:bg-accent hover:text-accent-content transition-colors duration-200"
-          >
-            🌐 Visit Website
-          </a>
-        </div>
-        
-        <!-- Special Note -->
-        {venue.note && (
-          <div class="text-xs bg-accent/20 rounded p-2 border-l-2 border-accent">
-            💡 {venue.note}
-          </div>
-        )}
+        ))}
       </div>
-    ))}
+    </div>
+
+    <!-- Moreleta Park -->
+    <div>
+      <h3 class="text-2xl font-bold text-accent mb-4">🌳 Moreleta Park</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {venues.filter(venue => venue.area === "Moreleta Park").map((venue) => (
+          <div class="card">
+            <h4 class="font-bold text-secondary mb-2">{venue.name}</h4>
+            <p class="text-sm text-accent font-semibold mb-2">{venue.type}</p>
+            <p class="text-sm mb-2">{venue.specialty}</p>
+            <p class="text-xs text-neutral mb-2">📍 {venue.address}</p>
+            <p class="text-xs text-neutral mb-3">📞 {venue.phone}</p>
+            <div class="flex flex-wrap gap-1">
+              {venue.features.map((feature) => (
+                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs">{feature}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Faerie Glen -->
+    <div>
+      <h3 class="text-2xl font-bold text-accent mb-4">🧚 Faerie Glen</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {venues.filter(venue => venue.area === "Faerie Glen").map((venue) => (
+          <div class="card">
+            <h4 class="font-bold text-secondary mb-2">{venue.name}</h4>
+            <p class="text-sm text-accent font-semibold mb-2">{venue.type}</p>
+            <p class="text-sm mb-2">{venue.specialty}</p>
+            <p class="text-xs text-neutral mb-2">📍 {venue.address}</p>
+            <p class="text-xs text-neutral mb-3">📞 {venue.phone}</p>
+            <div class="flex flex-wrap gap-1">
+              {venue.features.map((feature) => (
+                <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs">{feature}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
   </div>
   
-  <!-- Entertainment Tips -->
+  <!-- Tips for Riders -->
   <div class="mt-8 p-6 bg-gradient-to-r from-secondary/20 to-accent/20 rounded-lg border-l-4 border-secondary">
-    <h3 class="text-accent font-bold mb-4">🏍️ Rider Tips for Night Out</h3>
+    <h3 class="text-accent font-bold mb-4">🏍️ Tips for MAC'S MC Members</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
       <div>
         <strong class="text-secondary">🚫 Ride Safe:</strong> 
-        <span class="text-neutral-content">Designate a sober rider or use ride-sharing services</span>
+        <span class="text-neutral-content">Always designate a sober rider</span>
       </div>
       <div>
-        <strong class="text-secondary">🅿️ Parking:</strong> 
-        <span class="text-neutral-content">Most venues have secure parking areas</span>
+        <strong class="text-secondary">🅿️ Bike Parking:</strong> 
+        <span class="text-neutral-content">Most venues have secure parking</span>
       </div>
       <div>
-        <strong class="text-secondary">👥 Group Discounts:</strong> 
-        <span class="text-neutral-content">Many places offer deals for motorcycle club groups</span>
+        <strong class="text-secondary">👥 Group Bookings:</strong> 
+        <span class="text-neutral-content">Call ahead for large groups</span>
       </div>
       <div>
-        <strong class="text-secondary">📱 Reservations:</strong> 
-        <span class="text-neutral-content">Call ahead for larger groups, especially weekends</span>
+        <strong class="text-secondary">💰 Club Discounts:</strong> 
+        <span class="text-neutral-content">Ask about motorcycle club deals</span>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .card:hover {
-    transform: translateY(-2px);
-  }
-</style>
